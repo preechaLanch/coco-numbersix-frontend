@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfaf7;
+  --foreground: #153321;
 }
 
 @theme inline {
@@ -12,15 +12,151 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #d0b45c;
+  color: #073716;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-block: 0.5rem;
+  color: #4d6354;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  transition:
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.nav-link::before {
+  display: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.2rem;
+  height: 3px;
+  border-radius: 9999px;
+  background: #0b3c1b;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 240ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link[data-active="true"] {
+  color: #0b3c1b;
+  transform: none;
+}
+
+.nav-link:hover::before,
+.nav-link:focus-visible::before,
+.nav-link[data-active="true"]::before {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+.signature-line {
+  font-family: var(--font-signature), "Snell Roundhand", cursive;
+  font-size: clamp(2.35rem, 3.5vw, 3.2rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  display: block;
+  width: fit-content;
+  transform: translateY(0.35rem) rotate(-6deg);
+  transform-origin: left center;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.typing-line {
+  position: relative;
+  max-width: max-content;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2.4s steps(20, end) 600ms both;
+}
+
+.typing-line::after {
+  content: "";
+  position: absolute;
+  right: -0.35rem;
+  top: 0.1em;
+  height: 1.1em;
+  border-right: 2px solid #8a7116;
+  animation: cursor-blink 850ms step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 20ch;
+  }
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal],
+  [data-reveal].is-visible,
+  .typing-line {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+
+  .typing-line::after {
+    display: none;
+  }
 }

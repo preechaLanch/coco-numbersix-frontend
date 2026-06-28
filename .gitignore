@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+.playwright-cli/
+stitch_exports/
 
 # next.js
 /.next/
