@@ -19,22 +19,21 @@ export default function MobileMenu() {
     <div className="xl:hidden">
       <button
         type="button"
-        className="inline-flex h-11 items-center gap-3 rounded-full border border-[#dfe6dc] bg-white/82 px-4 text-[#0b3c1b] shadow-sm backdrop-blur transition hover:bg-white"
+        className="inline-grid h-10 w-10 place-items-center text-[#0b3c1b] transition hover:text-[#15552a]"
         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
         aria-expanded={isOpen}
         onClick={() => setIsOpen((value) => !value)}
       >
         <span className="sr-only">{isOpen ? "Close menu" : "Open menu"}</span>
-        <span className="text-sm font-bold uppercase tracking-[0.12em]">Menu</span>
         <span className="grid gap-1.5">
-          <span className={`block h-0.5 w-5 rounded-full bg-current transition ${isOpen ? "translate-y-2 rotate-45" : ""}`} />
-          <span className={`block h-0.5 w-5 rounded-full bg-current transition ${isOpen ? "opacity-0" : ""}`} />
-          <span className={`block h-0.5 w-5 rounded-full bg-current transition ${isOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+          <span className={`block h-0.5 w-7 rounded-full bg-current transition ${isOpen ? "translate-y-2 rotate-45" : ""}`} />
+          <span className={`block h-0.5 w-7 rounded-full bg-current transition ${isOpen ? "opacity-0" : ""}`} />
+          <span className={`block h-0.5 w-7 rounded-full bg-current transition ${isOpen ? "-translate-y-2 -rotate-45" : ""}`} />
         </span>
       </button>
 
       {isOpen ? (
-        <div className="absolute inset-x-5 top-[4.75rem] overflow-hidden rounded-2xl border border-[#dfe6dc] bg-[#fbfaf7] p-3 shadow-[0_20px_60px_rgba(7,55,22,0.18)]">
+        <div className="absolute inset-x-5 top-[4rem] overflow-hidden rounded-2xl border border-[#dfe6dc] bg-[#fbfaf7] p-3 shadow-[0_20px_60px_rgba(7,55,22,0.18)] md:top-[4.4rem]">
           <nav aria-label="Mobile navigation" className="grid gap-1">
             {menuLinks.map((link) => (
               <a

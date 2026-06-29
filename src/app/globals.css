@@ -94,6 +94,26 @@ html {
   transform-origin: left center;
 }
 
+.mobile-hero-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 240, 229, 0) 42%,
+    rgba(245, 240, 229, 0.24) 66%,
+    rgba(245, 240, 229, 0.9) 92%,
+    #f5f0e5 100%
+  );
+  opacity: 0;
+  transform: none;
+  transition: opacity 1000ms ease-out;
+}
+
+.mobile-hero-fade.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 [data-reveal] {
   opacity: 0;
   transform: translateY(28px);
