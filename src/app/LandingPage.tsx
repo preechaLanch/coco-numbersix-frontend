@@ -3,6 +3,7 @@ import ActiveNav from "./ActiveNav";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
 import ScrollReveal from "./ScrollReveal";
+import ShrinkingHeader from "./ShrinkingHeader";
 import { siteConfig } from "./siteConfig";
 
 type Locale = "en" | "th";
@@ -489,66 +490,99 @@ export default function LandingPage({ locale }: { locale: Locale }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ScrollReveal />
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#d9d3c4] bg-[#fbf8f0]/94 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1480px] items-center justify-between gap-5 px-5 py-3 md:px-10">
-          <a className="flex min-w-0 shrink-0 items-center gap-3" href="#top" aria-label="Coco Number Six home">
+      <ShrinkingHeader>
+        <div className="mx-auto grid max-w-[1480px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-2 transition-all duration-300 sm:px-5 md:px-8 md:py-2.5 xl:grid-cols-[auto_minmax(0,1fr)_auto_auto] xl:gap-4 xl:px-10 [.group[data-scrolled=true]_&]:py-1.5">
+          <a className="flex min-w-0 items-center gap-2.5 sm:gap-3" href="#top" aria-label="Coco Number Six home">
             <Image
               src="/images/coco-logo.jpg"
               alt=""
               width={58}
               height={58}
-              className="h-12 w-12 rounded-full object-cover md:h-14 md:w-14"
+              className="h-9 w-9 shrink-0 rounded-full object-cover transition-all duration-300 sm:h-10 sm:w-10 md:h-11 md:w-11 [.group[data-scrolled=true]_&]:h-9 [.group[data-scrolled=true]_&]:w-9"
               priority
             />
             <span className="min-w-0">
-              <span className="block whitespace-nowrap font-serif text-lg font-semibold uppercase text-[#0a3b20] sm:text-xl">
+              <span className="block truncate font-serif text-[1.02rem] font-semibold uppercase leading-tight text-[#0a3b20] sm:text-lg">
                 Coco Number Six
               </span>
-              <span className="hidden text-[10px] font-semibold uppercase tracking-[0.16em] text-[#5d665d] sm:block">
+              <span className="hidden text-[9px] font-semibold uppercase tracking-[0.14em] text-[#5d665d] transition-all duration-300 sm:block [.group[data-scrolled=true]_&]:opacity-0 [.group[data-scrolled=true]_&]:sm:hidden">
                 100% Organic Aromatic Coconut Water
               </span>
             </span>
           </a>
           <ActiveNav />
-          <LanguageSwitcher className="hidden shrink-0 xl:inline-flex" />
+          <div className="hidden shrink-0 xl:block">
+            <LanguageSwitcher />
+          </div>
           <a
-            className="hidden min-h-11 shrink-0 items-center bg-[#073716] px-6 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#15552a] xl:inline-flex"
+            className="hidden min-h-9 shrink-0 items-center bg-[#073716] px-5 text-[11px] font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#15552a] xl:inline-flex"
             href="#contact"
           >
             Enquire now
           </a>
           <MobileMenu />
         </div>
-      </header>
+      </ShrinkingHeader>
 
-      <section id="top" className="bg-[#f5f0e5] pt-[73px] md:pt-[81px]">
-        <div className="relative mx-auto min-h-[820px] max-w-[1480px] overflow-hidden md:min-h-[880px]">
+      <section id="top" className="bg-[#f5f0e5] pt-[57px] md:pt-[65px]">
+        <div className="relative mx-auto min-h-[calc(100svh-57px)] max-w-[1480px] overflow-hidden bg-[radial-gradient(circle_at_80%_78%,rgba(213,190,112,0.3),transparent_28%),linear-gradient(180deg,#f8f3e8_0%,#f0e8d8_100%)] md:min-h-[calc(100svh-65px)] md:bg-transparent">
           <Image
             src="/images/hero-coconut-bottle.webp"
             alt="Coco Number SiX organic aromatic coconut water in warm natural light"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[62%_center] md:object-[68%_center]"
+            className="hidden object-cover object-[72%_center] md:block xl:object-[70%_center]"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(245,240,229,0.98)_0%,rgba(245,240,229,0.9)_48%,rgba(245,240,229,0.12)_100%)] md:bg-[linear-gradient(90deg,#f5f0e5_0%,rgba(245,240,229,0.99)_28%,rgba(245,240,229,0.88)_43%,rgba(245,240,229,0.46)_56%,rgba(245,240,229,0.08)_70%,transparent_82%)]" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(180deg,transparent_0%,rgba(245,240,229,0.58)_58%,#f5f0e5_100%)] md:h-64" />
-          <div className="relative z-10 flex min-h-[820px] items-start px-6 pb-36 pt-16 sm:px-10 md:min-h-[880px] md:items-center md:px-16 md:pb-44 md:pt-20 xl:px-20">
-            <div className="max-w-xl">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#7c681f]" data-reveal>
+          <div className="absolute inset-0 hidden md:block md:bg-[linear-gradient(90deg,#f5f0e5_0%,rgba(245,240,229,0.98)_26%,rgba(245,240,229,0.82)_40%,rgba(245,240,229,0.28)_54%,rgba(245,240,229,0.04)_66%,transparent_78%)]" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-56 bg-[linear-gradient(180deg,transparent_0%,rgba(245,240,229,0.58)_58%,#f5f0e5_100%)] md:block md:h-64" />
+          <div className="relative z-10 flex min-h-[calc(100svh-57px)] flex-col px-6 pb-14 pt-0 sm:px-10 md:min-h-[calc(100svh-65px)] md:flex-row md:items-center md:px-16 md:pb-32 md:pt-12 xl:px-20">
+            <div className="relative -mx-6 min-h-[68svh] overflow-hidden bg-[#efe7d6] sm:-mx-10 sm:min-h-[72svh] md:hidden" data-reveal>
+              <Image
+                src="/images/product-hero.png"
+                alt="Coco Number SiX bottle with fresh coconut styling"
+                fill
+                priority
+                sizes="(max-width: 767px) 100vw, 0px"
+                className="object-cover object-[50%_30%]"
+              />
+              <div className="mobile-hero-fade" data-reveal style={{ transitionDelay: "360ms" }} />
+            </div>
+            <div className="relative z-10 -mt-[18svh] max-w-xl md:mt-0 md:max-w-xl">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#7c681f]" data-reveal style={{ transitionDelay: "520ms" }}>
                 Our story
               </p>
               <div className="mt-4 h-px w-24 bg-[#9e8734]" />
-              <h1 className="mt-7 font-serif text-5xl font-semibold leading-[0.98] text-[#073716] sm:text-6xl xl:text-7xl" data-reveal style={{ transitionDelay: "80ms" }}>
+              <h1 className="mt-6 font-serif text-[2.65rem] font-semibold leading-[0.98] text-[#073716] sm:text-6xl xl:text-7xl" data-reveal style={{ transitionDelay: "680ms" }}>
                 That First Coconut Sip.
               </h1>
-              <p className="mt-7 text-xs font-bold uppercase tracking-[0.2em] text-[#8a7116]" data-reveal style={{ transitionDelay: "140ms" }}>
+              <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8a7116] sm:text-xs" data-reveal style={{ transitionDelay: "820ms" }}>
                 The beginning of Coco Number SiX
               </p>
-              <p className="mt-6 max-w-md text-base leading-8 text-[#354b3b]" data-reveal style={{ transitionDelay: "200ms" }}>
+              <p className="mt-5 max-w-md text-[0.95rem] leading-7 text-[#354b3b] sm:text-base sm:leading-8" data-reveal style={{ transitionDelay: "960ms" }}>
                 Every memorable hospitality experience begins with a simple moment. For us, it was the first sip of a perfectly fresh Thai aromatic coconut.
               </p>
-              <div className="mt-[66px] md:mt-[74px]" data-reveal style={{ transitionDelay: "260ms" }}>
+              <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap" data-reveal style={{ transitionDelay: "1120ms" }}>
+                <a
+                  className="inline-flex min-h-11 items-center justify-center bg-[#073716] px-4 text-center text-[11px] font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#15552a] sm:px-5 sm:text-xs sm:tracking-[0.12em]"
+                  href="#pricing"
+                >
+                  Request Catalogue
+                </a>
+                <a
+                  className="inline-flex min-h-11 items-center justify-center border border-[#073716] bg-[#fbf8f0]/72 px-4 text-center text-[11px] font-bold uppercase tracking-[0.1em] text-[#073716] backdrop-blur transition hover:bg-white sm:px-5 sm:text-xs sm:tracking-[0.12em]"
+                  href="#contact"
+                >
+                  Contact Us
+                </a>
+                <a
+                  className="col-span-2 inline-flex min-h-11 items-center justify-center border border-[#b3993d] bg-[#e8d284]/70 px-4 text-center text-[11px] font-bold uppercase tracking-[0.1em] text-[#073716] backdrop-blur transition hover:bg-[#f1dfa0] sm:col-span-1 sm:px-5 sm:text-xs sm:tracking-[0.12em]"
+                  href="#partners"
+                >
+                  Become a Distributor
+                </a>
+              </div>
+              <div className="mt-8 md:mt-10" data-reveal style={{ transitionDelay: "1280ms" }}>
                 <p className="signature-line text-[#124425]">Pure hydration, naturally.</p>
               </div>
             </div>
@@ -650,12 +684,38 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   </div>
                 ))}
               </div>
+
+              <div className="mt-8 border-t border-[#d9d3c4] pt-7">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#8a7116]">
+                  Certification standards
+                </p>
+                <div className="mt-4 grid grid-cols-2 gap-3">
+                  <div className="flex min-h-24 items-center justify-center border border-[#e5dcc7] bg-white px-4 py-3 shadow-[0_10px_28px_rgba(36,46,35,0.06)]">
+                    <Image
+                      src="/images/cert-halal-thailand.jpg"
+                      alt="Halal certification by The Islamic Committee Office of Thailand"
+                      width={360}
+                      height={240}
+                      className="max-h-16 w-auto object-contain"
+                    />
+                  </div>
+                  <div className="flex min-h-24 items-center justify-center border border-[#e5dcc7] bg-white px-4 py-3 shadow-[0_10px_28px_rgba(36,46,35,0.06)]">
+                    <Image
+                      src="/images/cert-organic-thailand.jpg"
+                      alt="Organic Thailand certification mark"
+                      width={360}
+                      height={360}
+                      className="max-h-16 w-auto object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section aria-label="Premium aviation catering trust" className="bg-[#fbf8f0] px-5 pb-16 md:px-10 md:pb-24">
+      <section aria-label="Premium aviation catering trust" className="bg-[#fbf8f0] px-5 pb-10 md:px-10 md:pb-14">
         <div className="mx-auto overflow-hidden border-x border-b border-[#d9d3c4] bg-[#fbf8f0] max-w-[1500px]">
           <div className="grid min-h-[250px] lg:grid-cols-[0.38fr_0.62fr]">
             <div className="flex items-center bg-[#fbf8f0] px-8 py-10 md:px-12 lg:px-14" data-reveal>
@@ -680,6 +740,34 @@ export default function LandingPage({ locale }: { locale: Locale }) {
               />
               <div className="absolute inset-y-0 -left-px w-[62%] bg-[linear-gradient(90deg,#fbf8f0_0%,rgba(251,248,240,0.96)_14%,rgba(251,248,240,0.72)_34%,rgba(251,248,240,0.28)_58%,rgba(251,248,240,0)_100%)]" />
               <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(251,248,240,0.18)_0%,rgba(251,248,240,0.04)_45%,rgba(7,55,22,0.08)_100%)]" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Trusted by premium partners" className="bg-[#fbf8f0] px-5 pb-16 md:px-10 md:pb-24">
+        <div className="mx-auto max-w-[1500px]" data-reveal>
+          <div className="mb-5 flex flex-col gap-3 border-t border-[#d9d3c4] pt-7 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#8a7116]">Partner proof</p>
+              <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#073716] md:text-4xl">
+                Trusted across aviation, hospitality, wellness, retail, and corporate channels.
+              </h2>
+            </div>
+            <p className="max-w-md text-sm leading-6 text-[#4f6254]">
+              A quick view of premium organizations and service partners aligned with the Coco Number SiX hospitality story.
+            </p>
+          </div>
+
+          <div className="-mx-5 overflow-x-auto px-5 pb-3 md:mx-0 md:overflow-visible md:px-0 md:pb-0">
+            <div className="relative min-h-[600px] min-w-[900px] overflow-hidden border border-[#d9d3c4] bg-white shadow-[0_18px_50px_rgba(36,46,35,0.08)] md:min-h-0 md:min-w-0 md:aspect-[3/2]">
+              <Image
+                src="/images/trusted-premium-partners-updated.jpg"
+                alt="Trusted by premium partners across aviation, hotels, restaurants, wellness, retail, and corporate channels"
+                fill
+                sizes="(min-width: 768px) 1500px, 900px"
+                className="object-cover object-center"
+              />
             </div>
           </div>
         </div>

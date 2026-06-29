@@ -50,7 +50,7 @@ export default function LanguageSwitcher({ className = "" }: { className?: strin
 
   return (
     <div
-      className={`inline-flex items-center rounded-full border border-[#dfe6dc] bg-white/82 p-1 text-xs font-black uppercase tracking-[0.08em] shadow-sm backdrop-blur ${className}`}
+      className={`inline-flex items-center rounded-full border border-[#dfe6dc] bg-white/82 p-0.5 text-[10px] font-black uppercase tracking-[0.06em] shadow-sm backdrop-blur transition-all duration-300 ${className}`}
       aria-label="Switch language"
     >
       {languages.map((language) => {
@@ -60,9 +60,9 @@ export default function LanguageSwitcher({ className = "" }: { className?: strin
         return (
           <a
             key={language.code}
-            className={`inline-flex min-h-9 items-center gap-1.5 rounded-full px-3 transition ${
+            className={`inline-flex min-h-7 items-center gap-1 rounded-full px-2.5 transition ${
               isActive
-                ? "bg-[#073716] text-white shadow-[0_8px_18px_rgba(7,55,22,0.18)]"
+                ? "bg-[#073716] text-white shadow-[0_6px_14px_rgba(7,55,22,0.16)]"
                 : "text-[#46584b] hover:bg-[#eef8ef] hover:text-[#073716]"
             }`}
             href={href}
@@ -77,7 +77,7 @@ export default function LanguageSwitcher({ className = "" }: { className?: strin
               sessionStorage.setItem(scrollStorageKey, String(window.scrollY));
             }}
           >
-            <span className="text-base leading-none" aria-hidden="true">
+            <span className="text-sm leading-none" aria-hidden="true">
               {language.flag}
             </span>
             {language.label}
