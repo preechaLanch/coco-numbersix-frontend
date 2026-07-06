@@ -3,6 +3,7 @@ import ActiveNav from "./ActiveNav";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
 import ScrollReveal from "./ScrollReveal";
+import ScrollToHeroOnRefresh from "./ScrollToHeroOnRefresh";
 import ShrinkingHeader from "./ShrinkingHeader";
 import { siteConfig } from "./siteConfig";
 
@@ -310,6 +311,40 @@ const supportedLanguages = [
   { code: "ZH", flag: "🇨🇳" },
 ];
 
+const salesContact = {
+  phone: "+66 82 978 2666",
+  phoneHref: "tel:+66829782666",
+  lineId: "0819451666",
+  lineHref: "line://ti/p/~0819451666",
+  email: "PYP.worldgreen@gmail.com",
+  emailHref:
+    "mailto:PYP.worldgreen@gmail.com?subject=Coco%20Number%20SiX%20B2B%20Inquiry",
+};
+
+const contactMethods = [
+  {
+    label: "Call",
+    title: "Talk to sales",
+    value: salesContact.phone,
+    href: salesContact.phoneHref,
+    copy: "For urgent orders, hotel supply, and distributor conversations.",
+  },
+  {
+    label: "Line",
+    title: "Add friend on Line",
+    value: `Line ID: ${salesContact.lineId}`,
+    href: salesContact.lineHref,
+    copy: "Open the Line app and add this account directly.",
+  },
+  {
+    label: "Email",
+    title: "Send inquiry",
+    value: salesContact.email,
+    href: salesContact.emailHref,
+    copy: "Best for quotations, export details, and formal purchasing requests.",
+  },
+];
+
 function getJsonLd(locale: Locale) {
   const pageUrl = `${siteConfig.url}/${locale}`;
 
@@ -330,6 +365,7 @@ function getJsonLd(locale: Locale) {
           {
             "@type": "ContactPoint",
             telephone: "+66-82-978-2666",
+            email: salesContact.email,
             contactType: "sales",
             areaServed: "Worldwide",
             availableLanguage: ["Thai", "English", "Arabic", "Japanese", "Chinese"],
@@ -489,6 +525,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <ScrollToHeroOnRefresh />
       <ScrollReveal />
       <ShrinkingHeader>
         <div className="mx-auto grid max-w-[1480px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-2 transition-all duration-300 sm:px-5 md:px-8 md:py-2.5 xl:grid-cols-[auto_minmax(0,1fr)_auto_auto] xl:gap-4 xl:px-10 [.group[data-scrolled=true]_&]:py-1.5">
@@ -709,6 +746,128 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                     />
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Whole coconut service options" className="bg-[#fbf8f0] px-5 py-16 md:px-10 md:py-24">
+        <div className="mx-auto grid max-w-[1500px] overflow-hidden border border-[#d9d3c4] bg-[#f5f0e5] lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="flex items-center px-8 py-12 md:px-12 lg:px-14 xl:px-16" data-reveal>
+            <div className="max-w-xl">
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#8a7116]">
+                Whole coconut formats
+              </p>
+              <h2 className="mt-5 font-serif text-[2.45rem] font-semibold leading-[1.04] text-[#073716] md:text-5xl">
+                Branded coconut service for hotels, events, and premium retail.
+              </h2>
+              <div className="mt-6 h-px w-20 bg-[#a78b2c]" />
+              <p className="mt-6 text-base leading-8 text-[#4f6254]">
+                Beyond bottled coconut water, Coco Number SiX can support whole coconut presentation formats for welcome drinks, buffet moments, resort service, activations, and distributor inquiries.
+              </p>
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                {["Custom branded coconuts", "Hospitality-ready formats", "Event and activation supply", "Made for quotation"].map((item) => (
+                  <div key={item} className="border border-[#e1d6b9] bg-white/62 px-4 py-3 text-sm font-bold text-[#153321]">
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  className="inline-flex min-h-12 items-center justify-center bg-[#073716] px-6 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#15552a]"
+                  href="#contact"
+                >
+                  Request Whole Coconut Options
+                </a>
+                <a
+                  className="inline-flex min-h-12 items-center justify-center border border-[#a78b2c] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#735c00] transition hover:bg-white"
+                  href="#partners"
+                >
+                  Partner Inquiry
+                </a>
+              </div>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#8a7116]">
+                Pricing by format, volume, and service requirement.
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="relative min-h-[640px] overflow-hidden bg-[#092f17] p-4 md:p-6 lg:min-h-[760px]"
+            data-reveal
+            style={{ transitionDelay: "120ms" }}
+          >
+            <figure className="absolute inset-0">
+              <Image
+                src="/images/whole-coconut-city-activation.png"
+                alt="Coco Number SiX whole coconut activation visual in a city setting"
+                fill
+                sizes="(min-width: 1024px) 56vw, 100vw"
+                className="object-cover object-center"
+              />
+            </figure>
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,55,22,0.08),rgba(7,55,22,0.26)_38%,rgba(7,55,22,0.86))]" />
+            <div className="absolute inset-x-0 top-0 h-32 bg-[linear-gradient(180deg,rgba(7,55,22,0.8),rgba(7,55,22,0))]" />
+
+            <div className="relative z-10 flex min-h-[608px] flex-col justify-between md:min-h-[708px]">
+              <div className="max-w-sm border border-white/15 bg-[#073716]/72 px-5 py-4 text-white backdrop-blur-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#e1c766]">
+                  Visibility for launch moments
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[#e8f1e8]">
+                  Branded coconuts for welcome drinks, resort service, events, and distributor sampling.
+                </p>
+              </div>
+
+              <div className="grid gap-3 md:grid-cols-[1fr_0.9fr_0.82fr] md:items-end">
+                <figure className="group overflow-hidden border border-white/20 bg-[#fbf8f0] p-3 shadow-[0_20px_50px_rgba(0,0,0,0.22)]">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-white">
+                    <Image
+                      src="/images/whole-coconut-formats.jpg"
+                      alt="Coco Number SiX whole coconut presentation formats"
+                      fill
+                      sizes="(min-width: 1024px) 20vw, 90vw"
+                      className="object-contain object-center transition duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <figcaption className="mt-3 flex items-center justify-between gap-3 text-[#153321]">
+                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8a7116]">Formats</span>
+                    <span className="text-sm font-bold">Cut styles</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="group overflow-hidden border border-white/20 bg-[#fbf8f0] p-3 shadow-[0_20px_50px_rgba(0,0,0,0.22)]">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-white">
+                    <Image
+                      src="/images/whole-coconut-series.jpg"
+                      alt="Coco Number SiX whole coconut series options"
+                      fill
+                      sizes="(min-width: 1024px) 18vw, 90vw"
+                      className="object-contain object-center transition duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <figcaption className="mt-3 flex items-center justify-between gap-3 text-[#153321]">
+                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8a7116]">Series</span>
+                    <span className="text-sm font-bold">Service range</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="overflow-hidden border border-white/20 bg-[#073716] p-3 shadow-[0_20px_50px_rgba(0,0,0,0.22)]">
+                  <video
+                    className="aspect-[4/3] w-full object-cover"
+                    src="/media/whole-coconut-service.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label="Coco Number SiX whole coconut service video"
+                  />
+                  <figcaption className="mt-3 text-sm font-bold text-[#f4eddc]">
+                    Real service motion
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </div>
@@ -1063,6 +1222,11 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   <span className="absolute right-4 top-4 z-10 rounded-full bg-[#0b3c1b] px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-sm">
                     {product.badge}
                   </span>
+                  {product.volume === "246" ? (
+                    <span className="absolute bottom-5 left-5 z-10 rounded-full border border-[#d0b45c]/70 bg-[#fbf8f0]/92 px-4 py-2 text-[11px] font-black uppercase tracking-[0.14em] text-[#735c00] shadow-[0_10px_24px_rgba(7,55,22,0.12)] backdrop-blur">
+                      Mini size
+                    </span>
+                  ) : null}
                   <Image
                     src={product.image}
                     alt={`${product.volume} ml Coco Number SiX bottle`}
@@ -1083,9 +1247,16 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                       millilitres
                     </p>
                     </div>
-                    <p className="rounded-full bg-[#f3edcf] px-3 py-1 text-xs font-bold text-[#735c00]">
-                      {product.pack}
-                    </p>
+                    <div className="flex flex-wrap justify-end gap-2">
+                      {product.volume === "246" ? (
+                        <p className="rounded-full bg-[#0b3c1b] px-3 py-1 text-xs font-black uppercase tracking-[0.1em] text-white">
+                          Mini size
+                        </p>
+                      ) : null}
+                      <p className="rounded-full bg-[#f3edcf] px-3 py-1 text-xs font-bold text-[#735c00]">
+                        {product.pack}
+                      </p>
+                    </div>
                   </div>
                   <h3 className="mt-5 text-base font-bold text-[#153321]">{product.title}</h3>
                   <p className="mt-1 text-sm font-medium tracking-wide text-[#58675b]">{product.subtitle}</p>
@@ -1250,12 +1421,42 @@ export default function LandingPage({ locale }: { locale: Locale }) {
               For airlines, hotels, resorts, wellness destinations, and premium distributors, Coco Number SiX offers a product story guests can see, taste, and remember.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0b3c1b] px-7 text-sm font-bold text-white transition hover:bg-[#15552a]" href="tel:+66829782666">
-                Request Product Sample
+              <a
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0b3c1b] px-7 text-sm font-bold text-white transition hover:bg-[#15552a]"
+                href={salesContact.lineHref}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Add friend on Line
               </a>
-              <a className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#a78b2c] px-7 text-sm font-bold text-[#735c00] transition hover:bg-[#fbfaf7]" href="#partners">
-                See Partner Fit
+              <a
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#a78b2c] px-7 text-sm font-bold text-[#735c00] transition hover:bg-[#fbfaf7]"
+                href={salesContact.emailHref}
+              >
+                Request Catalogue
               </a>
+            </div>
+            <div className="mt-8 grid gap-3">
+              {contactMethods.map((method) => (
+                <a
+                  key={method.label}
+                  className="group grid gap-3 border border-[#dfd5bd] bg-white/72 p-4 transition hover:border-[#a78b2c] hover:bg-white sm:grid-cols-[5.5rem_minmax(0,1fr)_auto] sm:items-center"
+                  href={method.href}
+                  target={method.label === "Line" ? "_blank" : undefined}
+                  rel={method.label === "Line" ? "noreferrer" : undefined}
+                >
+                  <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#8a7116]">
+                    {method.label}
+                  </span>
+                  <span>
+                    <span className="block text-base font-bold text-[#073716]">{method.title}</span>
+                    <span className="mt-1 block text-sm leading-6 text-[#5a6c5e]">{method.copy}</span>
+                  </span>
+                  <span className="text-sm font-bold text-[#0b3c1b] transition group-hover:text-[#8a7116]">
+                    {method.value}
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
           <div className="relative min-h-[420px] bg-[#ccefd5]" data-reveal style={{ transitionDelay: "120ms" }}>
@@ -1304,7 +1505,18 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                 </a>
               </div>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {["+66 82 978 2666", "+66 81 945 1666", "+66 99 151 4247", "+66 99 639 2229"].map((phone) => (
+                {contactMethods.map((method) => (
+                  <a
+                    key={method.label}
+                    className="rounded-full border border-white/12 bg-[#073716]/40 px-4 py-3 text-sm font-bold text-[#d6e6d8] transition hover:border-[#e1c766] hover:text-white"
+                    href={method.href}
+                    target={method.label === "Line" ? "_blank" : undefined}
+                    rel={method.label === "Line" ? "noreferrer" : undefined}
+                  >
+                    {method.label}: {method.value}
+                  </a>
+                ))}
+                {["+66 81 945 1666", "+66 99 151 4247", "+66 99 639 2229"].map((phone) => (
                   <a
                     key={phone}
                     className="rounded-full border border-white/12 bg-[#073716]/40 px-4 py-3 text-sm font-bold text-[#d6e6d8] transition hover:border-[#e1c766] hover:text-white"
