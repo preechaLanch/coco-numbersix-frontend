@@ -9,64 +9,127 @@ import { siteConfig } from "./siteConfig";
 
 type Locale = "en" | "th";
 
-const gallery = [
-  {
-    src: "/images/product-table-946ml.jpg",
-    alt: "Coco Number Six 946 ml bottle styled with natural ingredients",
-    title: "Table Service",
-    copy: "A polished large-format presentation for hosted moments.",
-  },
-  {
-    src: "/images/partner-presence-event.webp",
-    alt: "PYP World Green team presenting Coco Number SiX at a hospitality event booth",
-    title: "Partner Presence",
-    copy: "Brand-ready for hospitality venues, travel activations, and premium events.",
-  },
-  {
-    src: "/images/service-chilled-wide.jpg",
-    alt: "Coco Number Six bottle served chilled from an ice chest",
-    title: "Served Chilled",
-    copy: "A simple refreshment ritual that feels immediate, generous, and useful.",
-  },
-];
+const galleryByLocale = {
+  en: [
+    {
+      src: "/images/product-table-946ml.jpg",
+      alt: "Coco Number Six 946 ml bottle styled with natural ingredients",
+      title: "Table Service",
+      copy: "A polished large-format presentation for hosted moments.",
+    },
+    {
+      src: "/images/partner-presence-event.webp",
+      alt: "PYP World Green team presenting Coco Number SiX at a hospitality event booth",
+      title: "Partner Presence",
+      copy: "Brand-ready for hospitality venues, travel activations, and premium events.",
+    },
+    {
+      src: "/images/service-chilled-wide.jpg",
+      alt: "Coco Number Six bottle served chilled from an ice chest",
+      title: "Served Chilled",
+      copy: "A simple refreshment ritual that feels immediate, generous, and useful.",
+    },
+  ],
+  th: [
+    {
+      src: "/images/product-table-946ml.jpg",
+      alt: "ขวด Coco Number SiX ขนาด 946 มล. จัดวางกับวัตถุดิบธรรมชาติ",
+      title: "บริการบนโต๊ะ",
+      copy: "ภาพลักษณ์ขวดขนาดใหญ่ที่เหมาะกับโต๊ะอาหาร งานรับรอง และช่วงเวลาพิเศษ",
+    },
+    {
+      src: "/images/partner-presence-event.webp",
+      alt: "ทีม PYP World Green นำเสนอ Coco Number SiX ในงานพาร์ทเนอร์",
+      title: "พร้อมออกงานพาร์ทเนอร์",
+      copy: "พร้อมสำหรับโรงแรม งานอีเวนต์ และกิจกรรมแบรนด์ระดับพรีเมียม",
+    },
+    {
+      src: "/images/service-chilled-wide.jpg",
+      alt: "ขวด Coco Number SiX เสิร์ฟเย็นจากถังน้ำแข็ง",
+      title: "เสิร์ฟเย็นพร้อมดื่ม",
+      copy: "ช่วงเวลาสดชื่นที่เรียบง่าย ดูดี และใช้งานได้จริงในงานบริการ",
+    },
+  ],
+};
 
-const productSizes = [
-  {
-    size: "473 ml",
-    title: "Single-serve refreshment",
-    copy: "A refined bottle for travel, hotel rooms, meeting breaks, and premium daily wellness.",
-  },
-  {
-    size: "946 ml",
-    title: "Sharing and service size",
-    copy: "A larger presentation for hospitality tables, hosted moments, and product storytelling.",
-  },
-];
+const productSizesByLocale = {
+  en: [
+    {
+      size: "473 ml",
+      title: "Single-serve refreshment",
+      copy: "A refined bottle for travel, hotel rooms, meeting breaks, and premium daily wellness.",
+    },
+    {
+      size: "946 ml",
+      title: "Sharing and service size",
+      copy: "A larger presentation for hospitality tables, hosted moments, and product storytelling.",
+    },
+  ],
+  th: [
+    {
+      size: "473 ml",
+      title: "ขนาดพร้อมเสิร์ฟรายบุคคล",
+      copy: "ขวดพรีเมียมสำหรับการเดินทาง ห้องพักโรงแรม ช่วงพักประชุม และการดื่มเพื่อสุขภาพในทุกวัน",
+    },
+    {
+      size: "946 ml",
+      title: "ขนาดสำหรับแบ่งปันและงานบริการ",
+      copy: "ขวดขนาดใหญ่สำหรับโต๊ะอาหาร งานรับรอง และการเล่าเรื่องแบรนด์ผ่านสินค้า",
+    },
+  ],
+};
 
-const partnerChannels = [
-  {
-    label: "Airlines",
-    title: "A Thai welcome above the world",
-    copy: "A refreshing beverage story for inflight service, lounge hospitality, and travelers discovering Thailand through taste.",
-  },
-  {
-    label: "Hotels & Resorts",
-    title: "A considered arrival moment",
-    copy: "Serve Coco Number SiX as a minibar selection, welcome drink, spa refreshment, or poolside wellness option.",
-  },
-  {
-    label: "Premium Retail & Wellness",
-    title: "Clean hydration with shelf appeal",
-    copy: "A product-led brand story for specialty retail, wellness spaces, gifting, and everyday premium refreshment.",
-  },
-];
+const partnerChannelsByLocale = {
+  en: [
+    {
+      label: "Airlines",
+      title: "A Thai welcome above the world",
+      copy: "A refreshing beverage story for inflight service, lounge hospitality, and travelers discovering Thailand through taste.",
+    },
+    {
+      label: "Hotels & Resorts",
+      title: "A considered arrival moment",
+      copy: "Serve Coco Number SiX as a minibar selection, welcome drink, spa refreshment, or poolside wellness option.",
+    },
+    {
+      label: "Premium Retail & Wellness",
+      title: "Clean hydration with shelf appeal",
+      copy: "A product-led brand story for specialty retail, wellness spaces, gifting, and everyday premium refreshment.",
+    },
+  ],
+  th: [
+    {
+      label: "สายการบิน",
+      title: "การต้อนรับแบบไทยเหนือท้องฟ้า",
+      copy: "เครื่องดื่มสดชื่นสำหรับบริการบนเครื่อง ห้องรับรอง และนักเดินทางที่สัมผัสประเทศไทยผ่านรสชาติ",
+    },
+    {
+      label: "โรงแรมและรีสอร์ท",
+      title: "ช่วงเวลาต้อนรับที่ใส่ใจ",
+      copy: "เหมาะกับมินิบาร์ welcome drink สปา เครื่องดื่มริมสระ และบริการที่ต้องการความพรีเมียม",
+    },
+    {
+      label: "รีเทลพรีเมียมและเวลเนส",
+      title: "ความสดชื่นสะอาดที่วางขายได้อย่างโดดเด่น",
+      copy: "เรื่องราวของสินค้าที่เหมาะกับรีเทลพิเศษ พื้นที่สุขภาพ ของฝาก และการดื่มสดชื่นในชีวิตประจำวัน",
+    },
+  ],
+};
 
-const productionProofs = [
-  { icon: "leaf", label: "100% Organic" },
-  { icon: "snow", label: "Cold Chain Managed" },
-  { icon: "shield", label: "Quality Controlled" },
-  { icon: "heart", label: "Made for Hospitality" },
-];
+const productionProofsByLocale = {
+  en: [
+    { icon: "leaf", label: "100% Organic" },
+    { icon: "snow", label: "Cold Chain Managed" },
+    { icon: "shield", label: "Quality Controlled" },
+    { icon: "heart", label: "Made for Hospitality" },
+  ],
+  th: [
+    { icon: "leaf", label: "ออร์แกนิก 100%" },
+    { icon: "snow", label: "ควบคุมระบบความเย็น" },
+    { icon: "shield", label: "ควบคุมคุณภาพ" },
+    { icon: "heart", label: "เหมาะกับงานบริการ" },
+  ],
+};
 
 const catalogProductsByLocale = {
   en: [
@@ -121,52 +184,52 @@ const catalogProductsByLocale = {
   ],
   th: [
     {
-      badge: "Premium",
+      badge: "พรีเมียม",
       image: "/images/product-946ml.jpg",
       volume: "946",
       pack: "12 ขวด / ลัง",
       price: "225",
       title: "น้ำมะพร้าวน้ำหอมออร์แกนิก",
-      subtitle: "Organic Aromatic Coconut Water",
+      subtitle: "ขนาดใหญ่สำหรับงานบริการ",
       details: [
-        "เก็บแช่แข็ง -18°C · Shelf life 18 เดือน",
-        "เหมาะสำหรับ Premium Lounge / VIP",
-        "Restaurant / Pool Bar / Event",
+        "เก็บแช่แข็ง -18°C · อายุสินค้า 18 เดือน",
+        "เหมาะสำหรับเลานจ์พรีเมียมและบริการ VIP",
+        "ร้านอาหาร / พูลบาร์ / งานอีเวนต์",
         "ฉลาก 5 ภาษา: TH / EN / AR / ZH / JA",
       ],
-      bestFor: "โรงแรม · Airlines · Export",
+      bestFor: "โรงแรม · สายการบิน · ส่งออก",
     },
     {
-      badge: "Best Seller",
+      badge: "ขายดี",
       image: "/images/service-chilled-wide.jpg",
       volume: "473",
       pack: "24 ขวด / ลัง",
       price: "115",
       title: "น้ำมะพร้าวน้ำหอมออร์แกนิก",
-      subtitle: "Organic Aromatic Coconut Water",
+      subtitle: "ขนาดพร้อมเสิร์ฟสำหรับแขก",
       details: [
-        "Single-serve · พกพาสะดวก",
-        "เหมาะสำหรับงาน Event / Meeting",
-        "Retail · Convenience Store",
+        "ขนาดดื่มคนเดียว · แช่เย็นง่าย พกพาสะดวก",
+        "เหมาะสำหรับงานอีเวนต์ ห้องประชุม และห้องพัก",
+        "รีเทล · ร้านสะดวกซื้อ",
         "ฉลาก 5 ภาษา: TH / EN / AR / ZH / JA",
       ],
-      bestFor: "Retail · Event · โรงแรม",
+      bestFor: "รีเทล · อีเวนต์ · โรงแรม",
     },
     {
-      badge: "New Size",
+      badge: "ขนาดใหม่",
       image: "/images/product-246ml.jpg",
       volume: "246",
       pack: "24 ขวด / ลัง",
       price: "69",
       title: "น้ำมะพร้าวน้ำหอมออร์แกนิก",
-      subtitle: "Organic Aromatic Coconut Water",
+      subtitle: "ขนาดเล็กพร้อมใช้ในงานบริการ",
       details: [
-        "Single-serve ขนาดเล็ก ไม่เหลือทิ้ง",
-        "เหมาะสำหรับ Mini Bar / In-flight",
-        "Breakfast Buffet / Welcome Drink",
-        "น้ำหนักเบา ลด Carbon footprint",
+        "ขนาดเล็กดื่มพอดี ลดการเหลือทิ้ง",
+        "เหมาะสำหรับมินิบาร์และบริการบนเครื่อง",
+        "บุฟเฟต์อาหารเช้า / Welcome Drink",
+        "ขนาดเบา ช่วยลดภาระการขนส่ง",
       ],
-      bestFor: "Airlines · Mini Bar · Breakfast",
+      bestFor: "สายการบิน · มินิบาร์ · อาหารเช้า",
     },
   ],
 };
@@ -195,20 +258,20 @@ const b2bCardsByLocale = {
   th: [
     {
       icon: "🏨",
-      title: "โรงแรม / Resort",
-      copy: "Welcome Drink · Pool Bar · Restaurant · Spa Amenity · Mini Bar · Laser Brand Coconut",
-      tag: "ส่วนลดตาม Volume",
+      title: "โรงแรม / รีสอร์ท",
+      copy: "Welcome Drink · พูลบาร์ · ร้านอาหาร · สปา · มินิบาร์ · มะพร้าวเลเซอร์แบรนด์",
+      tag: "ส่วนลดตามจำนวนสั่งซื้อ",
     },
     {
       icon: "✈️",
       title: "สายการบิน",
-      copy: "In-flight Beverage · รองรับผู้โดยสาร Halal · Co-branding ฉลากสายการบินได้ · ขนาด 246ml เหมาะมาก",
-      tag: "ราคา Contract พิเศษ",
+      copy: "เครื่องดื่มบนเครื่อง · รองรับผู้โดยสาร Halal · ทำฉลากร่วมกับสายการบินได้ · ขนาด 246 ml เหมาะกับงานบริการ",
+      tag: "ราคาสัญญาพิเศษ",
     },
     {
       icon: "🌍",
-      title: "Export / ต่างประเทศ",
-      copy: "ฉลากภาษาอังกฤษ-ญี่ปุ่น-จีนพร้อมแล้ว · Halal + Organic Export Ready · FOB Bangkok",
+      title: "ส่งออก / ต่างประเทศ",
+      copy: "ฉลากอังกฤษ ญี่ปุ่น จีนพร้อมใช้งาน · มาตรฐาน Halal + Organic · พร้อมส่งออกแบบ FOB Bangkok",
       tag: "ราคา FOB ต่อรองได้",
     },
   ],
@@ -217,19 +280,19 @@ const b2bCardsByLocale = {
 const b2bTiersByLocale = {
   en: [
     {
-      package: "Starter",
+      package: "เริ่มต้น",
       volume: "5-19 cases",
       discount: "Standard",
       service: "Free Bangkok delivery for 10+ cases",
     },
     {
-      package: "Business",
+      package: "ธุรกิจ",
       volume: "20-49 cases",
       discount: "8% off",
       service: "Account Manager",
     },
     {
-      package: "Premium Partner",
+      package: "พาร์ทเนอร์พรีเมียม",
       volume: "50+ cases",
       discount: "15% off",
       service: "Custom Label + Priority Delivery",
@@ -246,13 +309,13 @@ const b2bTiersByLocale = {
       package: "Business",
       volume: "20-49 ลัง",
       discount: "ลด 8%",
-      service: "Account Manager",
+      service: "มี Account Manager ดูแล",
     },
     {
       package: "Premium Partner",
       volume: "50+ ลัง",
       discount: "ลด 15%",
-      service: "Custom Label + Priority Delivery",
+      service: "ฉลากพิเศษ + จัดส่งแบบ Priority",
     },
   ],
 };
@@ -303,6 +366,210 @@ const wingsLocalCopy = {
   },
 };
 
+const pageCopy = {
+  en: {
+    navCta: "Enquire now",
+    brandSubtitle: "100% Organic Aromatic Coconut Water",
+    heroEyebrow: "Our story",
+    heroTitle: "That First Coconut Sip.",
+    heroKicker: "The beginning of Coco Number SiX",
+    heroCopy:
+      "Every memorable hospitality experience begins with a simple moment. For us, it was the first sip of a perfectly fresh Thai aromatic coconut.",
+    requestCatalogue: "Request Catalogue",
+    contactUs: "Contact Us",
+    distributor: "Become a Distributor",
+    signature: "Pure hydration, naturally.",
+    introTitle: ["Naturally sweet.", "Refreshingly pure.", "Unmistakably Thai."],
+    introCopy:
+      "Thailand produces some of the world's finest aromatic coconuts. Coco Number SiX was created to carry their authentic taste, quality, and quiet elegance into modern hospitality.",
+    introClosing: "That belief became the foundation of Coco Number SiX.",
+    productEyebrow: "Product excellence",
+    productTitle: "From Thailand's finest coconuts, crafted with care.",
+    productCopy:
+      "We work with trusted Thai partners to select aromatic coconuts and transform them into a product designed for modern hospitality, aviation, wellness, and premium retail.",
+    certification: "Certification standards",
+    wholeEyebrow: "Whole coconut formats",
+    wholeTitle: "Branded coconut service for hotels, events, and premium retail.",
+    wholeCopy:
+      "Beyond bottled coconut water, Coco Number SiX can support whole coconut presentation formats for welcome drinks, buffet moments, resort service, activations, and distributor inquiries.",
+    wholeItems: ["Custom branded coconuts", "Hospitality-ready formats", "Event and activation supply", "Made for quotation"],
+    wholeCta: "Request Whole Coconut Options",
+    partnerInquiry: "Partner Inquiry",
+    wholeNote: "Pricing by format, volume, and service requirement.",
+    launchEyebrow: "Visibility for launch moments",
+    launchCopy: "Branded coconuts for welcome drinks, resort service, events, and distributor sampling.",
+    formats: "Formats",
+    cutStyles: "Cut styles",
+    series: "Series",
+    serviceRange: "Service range",
+    motion: "Real service motion",
+    aviationTitle: "Trusted by premium aviation catering operations in Thailand.",
+    aviationCopy:
+      "Chosen for its purity, consistency, and exceptional quality to elevate the experience of discerning guests, both on the ground and in the skies.",
+    partnerProof: "Partner proof",
+    partnerProofTitle: "Trusted across aviation, hospitality, wellness, retail, and corporate channels.",
+    partnerProofCopy:
+      "A quick view of premium organizations and service partners aligned with the Coco Number SiX hospitality story.",
+    hospitalityEyebrow: "Crafted for service",
+    hospitalityTitle: "Service moments that feel refined, useful, and unmistakably Thai.",
+    serviceStandard: "Service standard",
+    serviceCopy:
+      "Coco Number SiX should look ready for a guest before they read a single claim: chilled, clear, premium, and easy to place in airlines, hotels, resorts, and hosted events.",
+    tableService: "Table service",
+    tableTitle: "Ready for premium tables",
+    tableCopy: "A product-led image that feels calm, tactile, and serviceable.",
+    hospitalityCue: "Hospitality cue",
+    chilledTitle: "Chilled, visible, and ready to serve.",
+    chilledCopy: "A clear service story: one premium table moment, one real hospitality setting, and one chilled product detail.",
+    coldDetail: "Cold detail",
+    inMotion: "In Motion",
+    wingsEyebrow: "Wings of Thailand",
+    wingsTitle: "From Thailand's coconut farms to the skies of the world.",
+    wingsParagraphs: [
+      "There is a special pride in seeing a product from Thailand travel beyond our borders.",
+      "Every day, millions of travelers discover our country through its people, culture, hospitality, and flavors. At Coco Number SiX, we are honored to be part of that journey.",
+      "Inspired by Thailand's world-renowned service standards, every bottle represents the dedication of Thai farmers, Thai craftsmanship, and the spirit of Thai hospitality.",
+    ],
+    organicDrop: "Organic in Every Drop",
+    proudlyThai: "Proudly from Thailand",
+    serviceExpression: "946 ml service expression",
+    serviceExpressionCopy: "A larger bottle story for sharing, hosting, and premium table moments.",
+    videoCaptionOne: "Product in motion for travel and service storytelling",
+    videoCaptionTwo: "A refreshing taste of Thailand beyond our borders",
+    partnersEyebrow: "Designed for premium partners",
+    partnersTitle: "A beverage story for service-led brands.",
+    partnersCopy:
+      "Coco Number SiX is built for environments where every small detail communicates care: travel, stays, wellness, retail, and hosted moments.",
+    productsEyebrow: "Our Products",
+    mostRequested: "Most requested size",
+    miniSize: "Mini size",
+    millilitres: "millilitres",
+    bestFor: "Best for",
+    bestValue: "Best Value",
+    b2bPackage: "B2B Package",
+    customQuote: "Custom quote available",
+    quoteItems: ["Volume", "Channel", "Destination", "Custom Label", "Delivery Cycle", "Export Terms"],
+    organicTitle: "Organic in every drop.",
+    organicCopy:
+      "Coco Number Six is positioned around quality without compromise, Thai hospitality, and a product experience that respects both people and place.",
+    values: ["Purpose first", "Quality standards", "Planet matters"],
+    promiseQuote: "A clean coconut water moment should feel effortless, generous, and unmistakably Thai.",
+    promiseLabel: "The Coco Promise",
+    contactEyebrow: "Partner with Coco Number SiX",
+    contactTitle: "Bring the refreshing taste of Thailand to your guests.",
+    contactCopy:
+      "For airlines, hotels, resorts, wellness destinations, and premium distributors, Coco Number SiX offers a product story guests can see, taste, and remember.",
+    addLine: "Add friend on Line",
+    footerCopy:
+      "Coco Number SiX · Pure Organic Aromatic Coconut Water. Crafted for premium hospitality, export-ready supply, and refreshing Thai service moments.",
+    footerTagline: "Strong · Green · Clean",
+    contactLabel: "Contact",
+    talkTeam: "Talk to our team",
+    requestSample: "Request Product Sample",
+    copyright: "© PYP World Green Co., Ltd. Organic in Every Drop.",
+  },
+  th: {
+    navCta: "สอบถามสินค้า",
+    brandSubtitle: "น้ำมะพร้าวน้ำหอมออร์แกนิก 100%",
+    heroEyebrow: "เรื่องราวของเรา",
+    heroTitle: "จิบแรกของมะพร้าวน้ำหอม",
+    heroKicker: "จุดเริ่มต้นของ Coco Number SiX",
+    heroCopy:
+      "ประสบการณ์บริการที่น่าจดจำมักเริ่มจากช่วงเวลาง่าย ๆ สำหรับเรา คือจิบแรกของมะพร้าวน้ำหอมไทยที่สดและสมบูรณ์แบบ",
+    requestCatalogue: "ขอแคตตาล็อก",
+    contactUs: "ติดต่อเรา",
+    distributor: "สมัครเป็นตัวแทนจำหน่าย",
+    signature: "เติมความสดชื่นอย่างเป็นธรรมชาติ",
+    introTitle: ["หวานธรรมชาติ", "สดชื่นบริสุทธิ์", "เอกลักษณ์แบบไทย"],
+    introCopy:
+      "ประเทศไทยมีมะพร้าวน้ำหอมคุณภาพระดับโลก Coco Number SiX จึงถูกสร้างขึ้นเพื่อส่งต่อรสชาติแท้ คุณภาพ และความประณีตสู่ประสบการณ์บริการสมัยใหม่",
+    introClosing: "ความเชื่อนี้คือรากฐานของ Coco Number SiX",
+    productEyebrow: "คุณภาพสินค้า",
+    productTitle: "คัดสรรมะพร้าวไทยคุณภาพดี ผลิตด้วยความใส่ใจ",
+    productCopy:
+      "เราทำงานร่วมกับพาร์ทเนอร์ไทยที่ไว้วางใจได้ เพื่อคัดเลือกมะพร้าวน้ำหอม และพัฒนาเป็นสินค้าที่เหมาะกับโรงแรม สายการบิน เวลเนส และรีเทลพรีเมียม",
+    certification: "มาตรฐานการรับรอง",
+    wholeEyebrow: "รูปแบบมะพร้าวลูก",
+    wholeTitle: "บริการมะพร้าวติดแบรนด์สำหรับโรงแรม อีเวนต์ และรีเทลพรีเมียม",
+    wholeCopy:
+      "นอกจากน้ำมะพร้าวแบบขวด Coco Number SiX ยังรองรับมะพร้าวลูกสำหรับ welcome drink, buffet, resort service, activation และตัวแทนจำหน่าย",
+    wholeItems: ["มะพร้าวติดแบรนด์", "รูปแบบพร้อมใช้ในงานบริการ", "รองรับอีเวนต์และกิจกรรมแบรนด์", "เสนอราคาตามรูปแบบงาน"],
+    wholeCta: "สอบถามมะพร้าวลูก",
+    partnerInquiry: "สอบถามพาร์ทเนอร์",
+    wholeNote: "ราคาเสนอแยกตามรูปแบบ จำนวน และความต้องการของงานบริการ",
+    launchEyebrow: "เหมาะกับช่วงเปิดตัวและงานแบรนด์",
+    launchCopy: "มะพร้าวติดแบรนด์สำหรับ welcome drink, resort service, event และ distributor sampling",
+    formats: "รูปแบบ",
+    cutStyles: "ทรงตัด",
+    series: "ซีรีส์",
+    serviceRange: "ตัวเลือกงานบริการ",
+    motion: "ภาพใช้งานจริง",
+    aviationTitle: "ได้รับความไว้วางใจจากงานบริการการบินระดับพรีเมียมในไทย",
+    aviationCopy:
+      "คัดเลือกจากความบริสุทธิ์ ความสม่ำเสมอ และคุณภาพ เพื่อยกระดับประสบการณ์ของลูกค้า ทั้งบนพื้นดินและบนท้องฟ้า",
+    partnerProof: "ความไว้วางใจจากพาร์ทเนอร์",
+    partnerProofTitle: "ได้รับความไว้วางใจในกลุ่มการบิน โรงแรม เวลเนส รีเทล และองค์กร",
+    partnerProofCopy: "ภาพรวมขององค์กรและพาร์ทเนอร์งานบริการระดับพรีเมียมที่สอดคล้องกับเรื่องราวของ Coco Number SiX",
+    hospitalityEyebrow: "ออกแบบเพื่อการบริการ",
+    hospitalityTitle: "ช่วงเวลาบริการที่ดูพรีเมียม ใช้งานได้จริง และมีเอกลักษณ์แบบไทย",
+    serviceStandard: "มาตรฐานการเสิร์ฟ",
+    serviceCopy:
+      "Coco Number SiX ควรดูพร้อมสำหรับแขกตั้งแต่ก่อนอ่านคำอธิบาย: เย็นสดชื่น ใสสะอาด พรีเมียม และวางในบริบทโรงแรม สายการบิน รีสอร์ท หรืออีเวนต์ได้ง่าย",
+    tableService: "บริการบนโต๊ะ",
+    tableTitle: "พร้อมสำหรับโต๊ะบริการพรีเมียม",
+    tableCopy: "ภาพสินค้าที่ดูนิ่ง ประณีต และพร้อมเสิร์ฟในงานบริการจริง",
+    hospitalityCue: "สัญญาณของงานบริการ",
+    chilledTitle: "เย็นสดชื่น มองเห็นสินค้า พร้อมเสิร์ฟ",
+    chilledCopy: "เล่าเรื่องงานบริการให้ชัดเจน: โต๊ะพรีเมียมหนึ่งช่วงเวลา บริบทงานบริการจริง และรายละเอียดสินค้าที่แช่เย็นพร้อมดื่ม",
+    coldDetail: "รายละเอียดความเย็น",
+    inMotion: "ภาพเคลื่อนไหว",
+    wingsEyebrow: "ปีกแห่งความเป็นไทย",
+    wingsTitle: "จากสวนมะพร้าวไทย สู่ท้องฟ้าและผู้คนทั่วโลก",
+    wingsParagraphs: [
+      "เราภูมิใจที่ได้เห็นสินค้าไทยเดินทางออกไปไกลกว่าพรมแดน",
+      "ทุกวัน นักเดินทางจำนวนมากรู้จักประเทศไทยผ่านผู้คน วัฒนธรรม งานบริการ และรสชาติ Coco Number SiX ภูมิใจที่ได้เป็นส่วนหนึ่งของการเดินทางนั้น",
+      "ด้วยแรงบันดาลใจจากมาตรฐานงานบริการไทย ทุกขวดสะท้อนความตั้งใจของเกษตรกร งานฝีมือ และจิตวิญญาณการต้อนรับแบบไทย",
+    ],
+    organicDrop: "Organic in Every Drop",
+    proudlyThai: "ภูมิใจจากประเทศไทย",
+    serviceExpression: "ขนาด 946 ml สำหรับงานบริการ",
+    serviceExpressionCopy: "ขวดขนาดใหญ่สำหรับการแบ่งปัน งานรับรอง และโต๊ะบริการพรีเมียม",
+    videoCaptionOne: "ภาพเคลื่อนไหวของสินค้าเพื่อการเดินทางและงานบริการ",
+    videoCaptionTwo: "รสชาติสดชื่นจากประเทศไทยสู่ผู้คนทั่วโลก",
+    partnersEyebrow: "ออกแบบเพื่อพาร์ทเนอร์พรีเมียม",
+    partnersTitle: "เรื่องราวเครื่องดื่มสำหรับแบรนด์ที่ให้ความสำคัญกับงานบริการ",
+    partnersCopy:
+      "Coco Number SiX เหมาะกับพื้นที่ที่ทุกรายละเอียดสื่อถึงความใส่ใจ ทั้งการเดินทาง โรงแรม เวลเนส รีเทล และงานรับรอง",
+    productsEyebrow: "สินค้าของเรา",
+    mostRequested: "ขนาดยอดนิยม",
+    miniSize: "ขนาด Mini",
+    millilitres: "มิลลิลิตร",
+    bestFor: "เหมาะสำหรับ",
+    bestValue: "คุ้มค่าที่สุด",
+    b2bPackage: "แพ็กเกจ B2B",
+    customQuote: "ขอใบเสนอราคาเฉพาะได้",
+    quoteItems: ["จำนวน", "ช่องทาง", "ปลายทาง", "ฉลากพิเศษ", "รอบจัดส่ง", "เงื่อนไขส่งออก"],
+    organicTitle: "ออร์แกนิกในทุกหยด",
+    organicCopy:
+      "Coco Number SiX วางตำแหน่งแบรนด์บนคุณภาพที่ไม่ประนีประนอม งานบริการแบบไทย และประสบการณ์สินค้าที่เคารพทั้งผู้คนและแหล่งที่มา",
+    values: ["เริ่มจากจุดประสงค์", "มาตรฐานคุณภาพ", "ใส่ใจโลก"],
+    promiseQuote: "ช่วงเวลาดื่มน้ำมะพร้าวที่ดีควรรู้สึกง่าย สดชื่น และมีเอกลักษณ์แบบไทย",
+    promiseLabel: "คำมั่นของ Coco",
+    contactEyebrow: "ร่วมเป็นพาร์ทเนอร์กับ Coco Number SiX",
+    contactTitle: "ส่งต่อรสชาติสดชื่นจากไทยให้แขกและลูกค้าของคุณ",
+    contactCopy:
+      "สำหรับสายการบิน โรงแรม รีสอร์ท เวลเนส และตัวแทนจำหน่ายพรีเมียม Coco Number SiX มีเรื่องราวสินค้าที่ลูกค้ามองเห็น ลิ้มรส และจดจำได้",
+    addLine: "เพิ่มเพื่อนใน LINE",
+    footerCopy:
+      "Coco Number SiX · น้ำมะพร้าวน้ำหอมออร์แกนิกแท้ สำหรับงานบริการพรีเมียม การส่งออก และช่วงเวลาสดชื่นแบบไทย",
+    footerTagline: "แข็งแรง · เป็นมิตรต่อโลก · สะอาด",
+    contactLabel: "ติดต่อ",
+    talkTeam: "คุยกับทีมงาน",
+    requestSample: "สอบถามสินค้า",
+    copyright: "© PYP World Green Co., Ltd. ออร์แกนิกในทุกหยด",
+  },
+};
+
 const supportedLanguages = [
   { code: "TH", flag: "🇹🇭" },
   { code: "EN", flag: "🇬🇧" },
@@ -321,29 +588,55 @@ const salesContact = {
     "mailto:PYP.worldgreen@gmail.com?subject=Coco%20Number%20SiX%20B2B%20Inquiry",
 };
 
-const contactMethods = [
-  {
-    label: "Call",
-    title: "Talk to sales",
-    value: salesContact.phone,
-    href: salesContact.phoneHref,
-    copy: "For urgent orders, hotel supply, and distributor conversations.",
-  },
-  {
-    label: "Line",
-    title: "Add friend on Line",
-    value: `Line ID: ${salesContact.lineId}`,
-    href: salesContact.lineHref,
-    copy: "Open the Line app and add this account directly.",
-  },
-  {
-    label: "Email",
-    title: "Send inquiry",
-    value: salesContact.email,
-    href: salesContact.emailHref,
-    copy: "Best for quotations, export details, and formal purchasing requests.",
-  },
-];
+function getContactMethods(locale: Locale) {
+  return locale === "th"
+    ? [
+        {
+          label: "โทร",
+          title: "คุยกับฝ่ายขาย",
+          value: salesContact.phone,
+          href: salesContact.phoneHref,
+          copy: "สำหรับออเดอร์เร่งด่วน โรงแรม และตัวแทนจำหน่าย",
+        },
+        {
+          label: "LINE",
+          title: "เพิ่มเพื่อนใน LINE",
+          value: `Line ID: ${salesContact.lineId}`,
+          href: salesContact.lineHref,
+          copy: "เปิดแอป LINE เพื่อเพิ่มเพื่อนและคุยกับทีมงานได้ทันที",
+        },
+        {
+          label: "อีเมล",
+          title: "ส่งคำถาม / ขอใบเสนอราคา",
+          value: salesContact.email,
+          href: salesContact.emailHref,
+          copy: "เหมาะสำหรับใบเสนอราคา รายละเอียดส่งออก และเอกสารจัดซื้อ",
+        },
+      ]
+    : [
+        {
+          label: "Call",
+          title: "Talk to sales",
+          value: salesContact.phone,
+          href: salesContact.phoneHref,
+          copy: "For urgent orders, hotel supply, and distributor conversations.",
+        },
+        {
+          label: "Line",
+          title: "Add friend on Line",
+          value: `Line ID: ${salesContact.lineId}`,
+          href: salesContact.lineHref,
+          copy: "Open the Line app and add this account directly.",
+        },
+        {
+          label: "Email",
+          title: "Send inquiry",
+          value: salesContact.email,
+          href: salesContact.emailHref,
+          copy: "Best for quotations, export details, and formal purchasing requests.",
+        },
+      ];
+}
 
 function getJsonLd(locale: Locale) {
   const pageUrl = `${siteConfig.url}/${locale}`;
@@ -516,6 +809,29 @@ export default function LandingPage({ locale }: { locale: Locale }) {
   const catalogProducts = catalogProductsByLocale[locale];
   const b2bCards = b2bCardsByLocale[locale];
   const b2bTiers = b2bTiersByLocale[locale];
+  const copy = pageCopy[locale];
+  const gallery = galleryByLocale[locale];
+  const productSizes = productSizesByLocale[locale];
+  const partnerChannels = partnerChannelsByLocale[locale];
+  const productionProofs = productionProofsByLocale[locale];
+  const contactMethods = getContactMethods(locale);
+  const footerLinks = locale === "th"
+    ? [
+        { label: "สินค้า", href: "#product" },
+        { label: "งานบริการ", href: "#hospitality" },
+        { label: "สู่สากล", href: "#wings" },
+        { label: "พาร์ทเนอร์", href: "#partners" },
+        { label: "ราคา", href: "#pricing" },
+        { label: "ติดต่อ", href: "#contact" },
+      ]
+    : [
+        { label: "Product", href: "#product" },
+        { label: "Hospitality", href: "#hospitality" },
+        { label: "Wings", href: "#wings" },
+        { label: "Partners", href: "#partners" },
+        { label: "Pricing", href: "#pricing" },
+        { label: "Contact", href: "#contact" },
+      ];
   const pricing = pricingCopy[locale];
   const wingsLocal = wingsLocalCopy[locale];
 
@@ -543,11 +859,11 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                 Coco Number Six
               </span>
               <span className="hidden text-[9px] font-semibold uppercase tracking-[0.14em] text-[#5d665d] transition-all duration-300 sm:block [.group[data-scrolled=true]_&]:opacity-0 [.group[data-scrolled=true]_&]:sm:hidden">
-                100% Organic Aromatic Coconut Water
+                {copy.brandSubtitle}
               </span>
             </span>
           </a>
-          <ActiveNav />
+          <ActiveNav locale={locale} />
           <div className="hidden shrink-0 xl:block">
             <LanguageSwitcher />
           </div>
@@ -555,9 +871,9 @@ export default function LandingPage({ locale }: { locale: Locale }) {
             className="hidden min-h-9 shrink-0 items-center bg-[#073716] px-5 text-[11px] font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#15552a] xl:inline-flex"
             href="#contact"
           >
-            Enquire now
+            {copy.navCta}
           </a>
-          <MobileMenu />
+          <MobileMenu locale={locale} />
         </div>
       </ShrinkingHeader>
 
@@ -587,40 +903,40 @@ export default function LandingPage({ locale }: { locale: Locale }) {
             </div>
             <div className="relative z-10 -mt-[18svh] max-w-xl md:mt-0 md:max-w-xl">
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#7c681f]" data-reveal style={{ transitionDelay: "520ms" }}>
-                Our story
+                {copy.heroEyebrow}
               </p>
               <div className="mt-4 h-px w-24 bg-[#9e8734]" />
               <h1 className="mt-6 font-serif text-[2.65rem] font-semibold leading-[0.98] text-[#073716] sm:text-6xl xl:text-7xl" data-reveal style={{ transitionDelay: "680ms" }}>
-                That First Coconut Sip.
+                {copy.heroTitle}
               </h1>
               <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8a7116] sm:text-xs" data-reveal style={{ transitionDelay: "820ms" }}>
-                The beginning of Coco Number SiX
+                {copy.heroKicker}
               </p>
               <p className="mt-5 max-w-md text-[0.95rem] leading-7 text-[#354b3b] sm:text-base sm:leading-8" data-reveal style={{ transitionDelay: "960ms" }}>
-                Every memorable hospitality experience begins with a simple moment. For us, it was the first sip of a perfectly fresh Thai aromatic coconut.
+                {copy.heroCopy}
               </p>
               <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap" data-reveal style={{ transitionDelay: "1120ms" }}>
                 <a
                   className="inline-flex min-h-11 items-center justify-center bg-[#073716] px-4 text-center text-[11px] font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#15552a] sm:px-5 sm:text-xs sm:tracking-[0.12em]"
                   href="#pricing"
                 >
-                  Request Catalogue
+                  {copy.requestCatalogue}
                 </a>
                 <a
                   className="inline-flex min-h-11 items-center justify-center border border-[#073716] bg-[#fbf8f0]/72 px-4 text-center text-[11px] font-bold uppercase tracking-[0.1em] text-[#073716] backdrop-blur transition hover:bg-white sm:px-5 sm:text-xs sm:tracking-[0.12em]"
                   href="#contact"
                 >
-                  Contact Us
+                  {copy.contactUs}
                 </a>
                 <a
                   className="col-span-2 inline-flex min-h-11 items-center justify-center border border-[#b3993d] bg-[#e8d284]/70 px-4 text-center text-[11px] font-bold uppercase tracking-[0.1em] text-[#073716] backdrop-blur transition hover:bg-[#f1dfa0] sm:col-span-1 sm:px-5 sm:text-xs sm:tracking-[0.12em]"
                   href="#partners"
                 >
-                  Become a Distributor
+                  {copy.distributor}
                 </a>
               </div>
               <div className="mt-8 md:mt-10" data-reveal style={{ transitionDelay: "1280ms" }}>
-                <p className="signature-line text-[#124425]">Pure hydration, naturally.</p>
+                <p className="signature-line text-[#124425]">{copy.signature}</p>
               </div>
             </div>
           </div>
@@ -632,16 +948,16 @@ export default function LandingPage({ locale }: { locale: Locale }) {
           <div className="flex items-center p-8 md:p-10 lg:p-12" data-reveal>
             <div>
               <h2 className="font-serif text-3xl font-semibold leading-tight text-[#073716] md:text-4xl">
-                <span className="block">Naturally sweet.</span>
-                <span className="block">Refreshingly pure.</span>
-                <span className="block">Unmistakably Thai.</span>
+                {copy.introTitle.map((line) => (
+                  <span key={line} className="block">{line}</span>
+                ))}
               </h2>
               <div className="mt-5 h-px w-12 bg-[#a78b2c]" />
               <p className="mt-5 text-sm leading-6 text-[#425247]">
-                Thailand produces some of the world&apos;s finest aromatic coconuts. Coco Number SiX was created to carry their authentic taste, quality, and quiet elegance into modern hospitality.
+                {copy.introCopy}
               </p>
               <p className="mt-4 font-serif text-lg text-[#8a7116]">
-                That belief became the foundation of Coco Number SiX.
+                {copy.introClosing}
               </p>
             </div>
           </div>
@@ -700,13 +1016,13 @@ export default function LandingPage({ locale }: { locale: Locale }) {
 
           <div className="flex items-center border-t border-[#d9d3c4] px-8 py-12 md:px-12 md:py-16 lg:border-l lg:border-t-0 lg:px-14 xl:px-16" data-reveal style={{ transitionDelay: "120ms" }}>
             <div className="w-full">
-              <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#8a7116]">Product excellence</p>
+              <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#8a7116]">{copy.productEyebrow}</p>
               <h2 className="mt-5 max-w-3xl font-serif text-[2.5rem] font-semibold leading-[1.08] text-[#073716] md:text-5xl lg:text-[3.45rem]">
-                From Thailand&apos;s finest coconuts, crafted with care.
+                {copy.productTitle}
               </h2>
               <div className="mt-6 h-px w-20 bg-[#a78b2c]" />
               <p className="mt-6 max-w-2xl text-base leading-8 text-[#4f6254]">
-                We work with trusted Thai partners to select aromatic coconuts and transform them into a product designed for modern hospitality, aviation, wellness, and premium retail.
+                {copy.productCopy}
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-x-5 gap-y-7 border-t border-[#d9d3c4] pt-8 sm:grid-cols-4">
@@ -724,7 +1040,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
 
               <div className="mt-8 border-t border-[#d9d3c4] pt-7">
                 <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#8a7116]">
-                  Certification standards
+                  {copy.certification}
                 </p>
                 <div className="mt-4 grid grid-cols-2 gap-3">
                   <div className="flex min-h-24 items-center justify-center border border-[#e5dcc7] bg-white px-4 py-3 shadow-[0_10px_28px_rgba(36,46,35,0.06)]">
@@ -757,17 +1073,17 @@ export default function LandingPage({ locale }: { locale: Locale }) {
           <div className="flex items-center px-8 py-12 md:px-12 lg:px-14 xl:px-16" data-reveal>
             <div className="max-w-xl">
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#8a7116]">
-                Whole coconut formats
+                {copy.wholeEyebrow}
               </p>
               <h2 className="mt-5 font-serif text-[2.45rem] font-semibold leading-[1.04] text-[#073716] md:text-5xl">
-                Branded coconut service for hotels, events, and premium retail.
+                {copy.wholeTitle}
               </h2>
               <div className="mt-6 h-px w-20 bg-[#a78b2c]" />
               <p className="mt-6 text-base leading-8 text-[#4f6254]">
-                Beyond bottled coconut water, Coco Number SiX can support whole coconut presentation formats for welcome drinks, buffet moments, resort service, activations, and distributor inquiries.
+                {copy.wholeCopy}
               </p>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                {["Custom branded coconuts", "Hospitality-ready formats", "Event and activation supply", "Made for quotation"].map((item) => (
+                {copy.wholeItems.map((item) => (
                   <div key={item} className="border border-[#e1d6b9] bg-white/62 px-4 py-3 text-sm font-bold text-[#153321]">
                     {item}
                   </div>
@@ -778,17 +1094,17 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   className="inline-flex min-h-12 items-center justify-center bg-[#073716] px-6 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#15552a]"
                   href="#contact"
                 >
-                  Request Whole Coconut Options
+                  {copy.wholeCta}
                 </a>
                 <a
                   className="inline-flex min-h-12 items-center justify-center border border-[#a78b2c] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#735c00] transition hover:bg-white"
                   href="#partners"
                 >
-                  Partner Inquiry
+                  {copy.partnerInquiry}
                 </a>
               </div>
               <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#8a7116]">
-                Pricing by format, volume, and service requirement.
+                {copy.wholeNote}
               </p>
             </div>
           </div>
@@ -813,10 +1129,10 @@ export default function LandingPage({ locale }: { locale: Locale }) {
             <div className="relative z-10 flex min-h-[608px] flex-col justify-between md:min-h-[708px]">
               <div className="max-w-sm border border-white/15 bg-[#073716]/72 px-5 py-4 text-white backdrop-blur-sm">
                 <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#e1c766]">
-                  Visibility for launch moments
+                  {copy.launchEyebrow}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-[#e8f1e8]">
-                  Branded coconuts for welcome drinks, resort service, events, and distributor sampling.
+                  {copy.launchCopy}
                 </p>
               </div>
 
@@ -832,8 +1148,8 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                     />
                   </div>
                   <figcaption className="mt-3 flex items-center justify-between gap-3 text-[#153321]">
-                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8a7116]">Formats</span>
-                    <span className="text-sm font-bold">Cut styles</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8a7116]">{copy.formats}</span>
+                    <span className="text-sm font-bold">{copy.cutStyles}</span>
                   </figcaption>
                 </figure>
 
@@ -848,8 +1164,8 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                     />
                   </div>
                   <figcaption className="mt-3 flex items-center justify-between gap-3 text-[#153321]">
-                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8a7116]">Series</span>
-                    <span className="text-sm font-bold">Service range</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8a7116]">{copy.series}</span>
+                    <span className="text-sm font-bold">{copy.serviceRange}</span>
                   </figcaption>
                 </figure>
 
@@ -865,7 +1181,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                     aria-label="Coco Number SiX whole coconut service video"
                   />
                   <figcaption className="mt-3 text-sm font-bold text-[#f4eddc]">
-                    Real service motion
+                    {copy.motion}
                   </figcaption>
                 </figure>
               </div>
@@ -880,11 +1196,11 @@ export default function LandingPage({ locale }: { locale: Locale }) {
             <div className="flex items-center bg-[#fbf8f0] px-8 py-10 md:px-12 lg:px-14" data-reveal>
               <div className="max-w-md">
                 <h2 className="font-serif text-2xl font-semibold leading-tight text-[#073716] md:text-3xl">
-                  Trusted by premium aviation catering operations in Thailand.
+                  {copy.aviationTitle}
                 </h2>
                 <div className="mt-5 h-px w-12 bg-[#a78b2c]" />
                 <p className="mt-5 text-sm leading-6 text-[#354b3b]">
-                  Chosen for its purity, consistency, and exceptional quality to elevate the experience of discerning guests, both on the ground and in the skies.
+                  {copy.aviationCopy}
                 </p>
               </div>
             </div>
@@ -908,13 +1224,13 @@ export default function LandingPage({ locale }: { locale: Locale }) {
         <div className="mx-auto max-w-[1500px]" data-reveal>
           <div className="mb-5 flex flex-col gap-3 border-t border-[#d9d3c4] pt-7 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#8a7116]">Partner proof</p>
+              <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#8a7116]">{copy.partnerProof}</p>
               <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#073716] md:text-4xl">
-                Trusted across aviation, hospitality, wellness, retail, and corporate channels.
+                {copy.partnerProofTitle}
               </h2>
             </div>
             <p className="max-w-md text-sm leading-6 text-[#4f6254]">
-              A quick view of premium organizations and service partners aligned with the Coco Number SiX hospitality story.
+              {copy.partnerProofCopy}
             </p>
           </div>
 
@@ -936,15 +1252,15 @@ export default function LandingPage({ locale }: { locale: Locale }) {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-10 grid gap-8 border-y border-[#d9d3c4] py-8 lg:grid-cols-[0.72fr_0.58fr] lg:items-start lg:justify-between" data-reveal>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#8a7116]">Crafted for service</p>
+              <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#8a7116]">{copy.hospitalityEyebrow}</p>
               <h2 className="mt-4 max-w-2xl font-serif text-4xl font-semibold leading-[1.04] text-[#073716] md:text-6xl">
-                Service moments that feel refined, useful, and unmistakably Thai.
+                {copy.hospitalityTitle}
               </h2>
             </div>
             <div className="max-w-xl border-l border-[#a78b2c] pl-6 lg:mt-11">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8a7116]">Service standard</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8a7116]">{copy.serviceStandard}</p>
               <p className="mt-4 text-base leading-8 text-[#4f6254]">
-                Coco Number SiX should look ready for a guest before they read a single claim: chilled, clear, premium, and easy to place in airlines, hotels, resorts, and hosted events.
+                {copy.serviceCopy}
               </p>
             </div>
           </div>
@@ -959,23 +1275,23 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                 className="object-cover object-center transition duration-700 hover:scale-[1.03]"
               />
               <figcaption className="absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(7,55,22,0.88),rgba(7,55,22,0.42)_52%,rgba(7,55,22,0))] px-6 pb-7 pt-36 text-white md:px-8 md:pb-8">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#e1c766]">Table service</p>
-                <p className="mt-3 max-w-xl font-serif text-3xl font-semibold leading-tight md:text-4xl">Ready for premium tables</p>
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#e1c766]">{copy.tableService}</p>
+                <p className="mt-3 max-w-xl font-serif text-3xl font-semibold leading-tight md:text-4xl">{copy.tableTitle}</p>
                 <p className="mt-3 max-w-lg text-sm leading-7 text-[#dfece1]">
-                  A product-led image that feels calm, tactile, and serviceable.
+                  {copy.tableCopy}
                 </p>
               </figcaption>
             </figure>
 
             <div className="grid gap-px bg-[#d9d3c4]">
               <article className="bg-[#073716] p-8 text-white md:p-10" data-reveal style={{ transitionDelay: "90ms" }}>
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#e1c766]">Hospitality cue</p>
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#e1c766]">{copy.hospitalityCue}</p>
                 <h3 className="mt-4 max-w-md font-serif text-3xl font-semibold leading-tight md:text-4xl">
-                  Chilled, visible, and ready to serve.
+                  {copy.chilledTitle}
                 </h3>
                 <div className="mt-5 h-px w-14 bg-[#e1c766]" />
                 <p className="mt-5 max-w-lg text-sm leading-7 text-[#cfe1d2]">
-                  A clear service story: one premium table moment, one real hospitality setting, and one chilled product detail.
+                  {copy.chilledCopy}
                 </p>
               </article>
 
@@ -991,8 +1307,8 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   aria-label="Coco Number Six service motion clip"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.76),rgba(0,0,0,0))] px-5 pb-5 pt-24 text-white">
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#e1c766]">Cold detail</p>
-                  <p className="mt-1 font-serif text-2xl font-semibold">In Motion</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#e1c766]">{copy.coldDetail}</p>
+                  <p className="mt-1 font-serif text-2xl font-semibold">{copy.inMotion}</p>
                 </figcaption>
               </figure>
 
@@ -1043,27 +1359,21 @@ export default function LandingPage({ locale }: { locale: Locale }) {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div data-reveal>
-              <p className="text-sm font-bold uppercase text-[#8a7116]">Wings of Thailand</p>
+              <p className="text-sm font-bold uppercase text-[#8a7116]">{copy.wingsEyebrow}</p>
               <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-[#073716] md:text-6xl">
-                From Thailand&apos;s coconut farms to the skies of the world.
+                {copy.wingsTitle}
               </h2>
               <div className="mt-7 space-y-5 text-lg leading-8 text-[#4f6254]">
-                <p>
-                  There is a special pride in seeing a product from Thailand travel beyond our borders.
-                </p>
-                <p>
-                  Every day, millions of travelers discover our country through its people, culture, hospitality, and flavors. At Coco Number SiX, we are honored to be part of that journey.
-                </p>
-                <p>
-                  Inspired by Thailand&apos;s world-renowned service standards, every bottle represents the dedication of Thai farmers, Thai craftsmanship, and the spirit of Thai hospitality.
-                </p>
+                {copy.wingsParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </div>
               <div className="mt-8 flex flex-wrap gap-3 text-sm font-bold">
                 <span className="border border-[#8da18f] px-4 py-2 text-[#0b3c1b]">
-                  Organic in Every Drop
+                  {copy.organicDrop}
                 </span>
                 <span className="border border-[#b49b43] px-4 py-2 text-[#735c00]">
-                  Proudly from Thailand
+                  {copy.proudlyThai}
                 </span>
               </div>
             </div>
@@ -1077,9 +1387,9 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(7,55,22,0.78),rgba(7,55,22,0))] px-6 pb-6 pt-24 text-white">
-                  <p className="font-serif text-3xl font-semibold">946 ml service expression</p>
+                  <p className="font-serif text-3xl font-semibold">{copy.serviceExpression}</p>
                   <p className="mt-2 max-w-lg text-sm leading-6 text-[#dfece1]">
-                    A larger bottle story for sharing, hosting, and premium table moments.
+                    {copy.serviceExpressionCopy}
                   </p>
                 </div>
               </div>
@@ -1113,7 +1423,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   aria-label="Coco Number Six service video"
                 />
                 <figcaption className="bg-white px-5 py-4 text-sm font-semibold text-[#153321]">
-                  Product in motion for travel and service storytelling
+                  {copy.videoCaptionOne}
                 </figcaption>
               </figure>
               <figure className="overflow-hidden border border-[#d9d3c4] bg-black" data-reveal style={{ transitionDelay: "180ms" }}>
@@ -1128,7 +1438,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   aria-label="Coco Number Six hospitality video"
                 />
                 <figcaption className="bg-white px-5 py-4 text-sm font-semibold text-[#153321]">
-                  A refreshing taste of Thailand beyond our borders
+                  {copy.videoCaptionTwo}
                 </figcaption>
               </figure>
             </div>
@@ -1155,13 +1465,13 @@ export default function LandingPage({ locale }: { locale: Locale }) {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end" data-reveal>
             <div>
-              <p className="text-sm font-bold uppercase text-[#8a7116]">Designed for premium partners</p>
+              <p className="text-sm font-bold uppercase text-[#8a7116]">{copy.partnersEyebrow}</p>
               <h2 className="mt-3 font-serif text-4xl font-semibold text-[#073716] md:text-5xl">
-                A beverage story for service-led brands.
+                {copy.partnersTitle}
               </h2>
             </div>
             <p className="max-w-2xl text-lg leading-8 text-[#4f6254]">
-              Coco Number SiX is built for environments where every small detail communicates care: travel, stays, wellness, retail, and hosted moments.
+              {copy.partnersCopy}
             </p>
           </div>
           <div className="grid border-y border-[#d9d3c4] lg:grid-cols-3">
@@ -1189,7 +1499,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
         <div className="mx-auto max-w-7xl">
           <div className="relative mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end" data-reveal>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#8a7116]">Our Products</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#8a7116]">{copy.productsEyebrow}</p>
               <h2 className="mt-2 font-serif text-4xl font-semibold text-[#073716] md:text-5xl">
                 {pricing.productsTitle}
               </h2>
@@ -1212,7 +1522,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
               >
                 {index === 1 ? (
                   <div className="absolute left-0 right-0 top-0 z-10 bg-[#d0b45c] py-2 text-center text-xs font-black uppercase tracking-[0.22em] text-[#073716]">
-                    Most requested size
+                    {copy.mostRequested}
                   </div>
                 ) : null}
                 <div className={`relative flex h-72 items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_center,#ffffff_0%,#eef8ef_48%,#dbeedd_100%)] p-6 sm:h-80 ${
@@ -1224,7 +1534,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   </span>
                   {product.volume === "246" ? (
                     <span className="absolute bottom-5 left-5 z-10 rounded-full border border-[#d0b45c]/70 bg-[#fbf8f0]/92 px-4 py-2 text-[11px] font-black uppercase tracking-[0.14em] text-[#735c00] shadow-[0_10px_24px_rgba(7,55,22,0.12)] backdrop-blur">
-                      Mini size
+                      {copy.miniSize}
                     </span>
                   ) : null}
                   <Image
@@ -1244,13 +1554,13 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                       {product.volume}
                     </p>
                     <p className="pb-1 text-sm font-bold uppercase tracking-[0.12em] text-[#58675b]">
-                      millilitres
+                      {copy.millilitres}
                     </p>
                     </div>
                     <div className="flex flex-wrap justify-end gap-2">
                       {product.volume === "246" ? (
                         <p className="rounded-full bg-[#0b3c1b] px-3 py-1 text-xs font-black uppercase tracking-[0.1em] text-white">
-                          Mini size
+                          {copy.miniSize}
                         </p>
                       ) : null}
                       <p className="rounded-full bg-[#f3edcf] px-3 py-1 text-xs font-bold text-[#735c00]">
@@ -1271,7 +1581,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   </ul>
 
                   <div className="mt-6 rounded-xl bg-[#d3f0d7] p-4">
-                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#0b3c1b]">Best for</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#0b3c1b]">{copy.bestFor}</p>
                     <p className="mt-1 text-sm font-bold text-[#153321]">{product.bestFor}</p>
                   </div>
 
@@ -1327,11 +1637,11 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                 >
                   {index === 2 ? (
                     <div className="absolute right-0 top-0 rounded-bl-2xl bg-[#d0b45c] px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-[#073716]">
-                      Best Value
+                      {copy.bestValue}
                     </div>
                   ) : null}
                   <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#8a7116]">
-                    B2B Package
+                    {copy.b2bPackage}
                   </p>
                   <h3 className="mt-3 font-serif text-3xl font-semibold text-[#073716]">
                     {tier.package}
@@ -1360,7 +1670,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
               <div className="grid gap-6 p-7 text-white lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
                 <div>
                   <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#e1c766]">
-                    Custom quote available
+                    {copy.customQuote}
                   </p>
                   <h3 className="mt-3 font-serif text-3xl font-semibold">
                     {pricing.customTitle}
@@ -1370,7 +1680,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   </p>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {["Volume", "Channel", "Destination", "Custom Label", "Delivery Cycle", "Export Terms"].map((item) => (
+                  {copy.quoteItems.map((item) => (
                     <div key={item} className="rounded-full border border-white/14 bg-white/10 px-4 py-3 text-sm font-bold text-[#f4f6f0]">
                       {item}
                     </div>
@@ -1387,13 +1697,13 @@ export default function LandingPage({ locale }: { locale: Locale }) {
           <div data-reveal>
             <p className="text-sm font-bold uppercase text-[#8a7116]">PYP WorldGreen</p>
             <h2 className="mt-3 font-serif text-4xl font-semibold text-[#073716] md:text-5xl">
-              Organic in every drop.
+              {copy.organicTitle}
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#4f6254]">
-              Coco Number Six is positioned around quality without compromise, Thai hospitality, and a product experience that respects both people and place.
+              {copy.organicCopy}
             </p>
             <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {["Purpose first", "Quality standards", "Planet matters"].map((value, index) => (
+              {copy.values.map((value, index) => (
                 <div key={value} className="border-t border-[#d9dfd6] pt-5">
                   <p className="font-serif text-4xl font-semibold text-[#d0b45c]">0{index + 1}</p>
                   <p className="mt-3 text-lg font-bold text-[#103b1d]">{value}</p>
@@ -1403,9 +1713,9 @@ export default function LandingPage({ locale }: { locale: Locale }) {
           </div>
           <blockquote className="border-l border-[#a78b2c] bg-[#f5f0e5] p-8 md:p-10" data-reveal style={{ transitionDelay: "120ms" }}>
             <p className="font-serif text-3xl leading-snug text-[#0b3c1b]">
-              &ldquo;A clean coconut water moment should feel effortless, generous, and unmistakably Thai.&rdquo;
+              &ldquo;{copy.promiseQuote}&rdquo;
             </p>
-            <footer className="mt-6 text-sm font-bold uppercase text-[#8a7116]">The Coco Promise</footer>
+            <footer className="mt-6 text-sm font-bold uppercase text-[#8a7116]">{copy.promiseLabel}</footer>
           </blockquote>
         </div>
       </section>
@@ -1413,12 +1723,12 @@ export default function LandingPage({ locale }: { locale: Locale }) {
       <section id="contact" className="scroll-mt-24 bg-[#f5f0e5] px-5 py-16 md:px-10 md:py-24">
         <div className="mx-auto grid max-w-7xl overflow-hidden border border-[#d9d3c4] bg-[#fbf8f0] lg:grid-cols-2">
           <div className="p-8 md:p-12 lg:p-16" data-reveal>
-            <p className="text-sm font-bold uppercase text-[#8a7116]">Partner with Coco Number SiX</p>
+            <p className="text-sm font-bold uppercase text-[#8a7116]">{copy.contactEyebrow}</p>
             <h2 className="mt-3 font-serif text-4xl font-semibold text-[#073716] md:text-5xl">
-              Bring the refreshing taste of Thailand to your guests.
+              {copy.contactTitle}
             </h2>
             <p className="mt-6 text-lg leading-8 text-[#4f6254]">
-              For airlines, hotels, resorts, wellness destinations, and premium distributors, Coco Number SiX offers a product story guests can see, taste, and remember.
+              {copy.contactCopy}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -1427,13 +1737,13 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                 target="_blank"
                 rel="noreferrer"
               >
-                Add friend on Line
+                {copy.addLine}
               </a>
               <a
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#a78b2c] px-7 text-sm font-bold text-[#735c00] transition hover:bg-[#fbfaf7]"
                 href={salesContact.emailHref}
               >
-                Request Catalogue
+                {copy.requestCatalogue}
               </a>
             </div>
             <div className="mt-8 grid gap-3">
@@ -1442,8 +1752,8 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   key={method.label}
                   className="group grid gap-3 border border-[#dfd5bd] bg-white/72 p-4 transition hover:border-[#a78b2c] hover:bg-white sm:grid-cols-[5.5rem_minmax(0,1fr)_auto] sm:items-center"
                   href={method.href}
-                  target={method.label === "Line" ? "_blank" : undefined}
-                  rel={method.label === "Line" ? "noreferrer" : undefined}
+                  target={method.href.startsWith("line:") ? "_blank" : undefined}
+                  rel={method.href.startsWith("line:") ? "noreferrer" : undefined}
                 >
                   <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#8a7116]">
                     {method.label}
@@ -1476,13 +1786,13 @@ export default function LandingPage({ locale }: { locale: Locale }) {
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#58c78d]">
-                Strong · Green · Clean
+                {copy.footerTagline}
               </p>
               <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight md:text-5xl">
                 PYP World Green Co., Ltd.
               </h2>
               <p className="mt-5 max-w-xl leading-7 text-[#c9d9cc]">
-                Coco Number SiX · Pure Organic Aromatic Coconut Water. Crafted for premium hospitality, export-ready supply, and refreshing Thai service moments.
+                {copy.footerCopy}
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 {supportedLanguages.map((language) => (
@@ -1497,11 +1807,11 @@ export default function LandingPage({ locale }: { locale: Locale }) {
             <div className="rounded-2xl border border-white/12 bg-white/8 p-6">
               <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
                 <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#58c78d]">Contact</p>
-                  <h3 className="mt-2 font-serif text-3xl font-semibold">Talk to our team</h3>
+                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#58c78d]">{copy.contactLabel}</p>
+                  <h3 className="mt-2 font-serif text-3xl font-semibold">{copy.talkTeam}</h3>
                 </div>
                 <a className="text-sm font-bold text-[#e1c766] transition hover:text-white" href="#contact">
-                  Request Product Sample
+                  {copy.requestSample}
                 </a>
               </div>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -1510,8 +1820,8 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                     key={method.label}
                     className="rounded-full border border-white/12 bg-[#073716]/40 px-4 py-3 text-sm font-bold text-[#d6e6d8] transition hover:border-[#e1c766] hover:text-white"
                     href={method.href}
-                    target={method.label === "Line" ? "_blank" : undefined}
-                    rel={method.label === "Line" ? "noreferrer" : undefined}
+                    target={method.href.startsWith("line:") ? "_blank" : undefined}
+                    rel={method.href.startsWith("line:") ? "noreferrer" : undefined}
                   >
                     {method.label}: {method.value}
                   </a>
@@ -1530,14 +1840,11 @@ export default function LandingPage({ locale }: { locale: Locale }) {
           </div>
 
           <div className="mt-12 flex flex-col items-start justify-between gap-5 border-t border-white/12 pt-6 text-sm text-[#c9d9cc] md:flex-row md:items-center">
-            <p>© PYP World Green Co., Ltd. Organic in Every Drop.</p>
+            <p>{copy.copyright}</p>
             <div className="flex flex-wrap gap-4 font-semibold text-[#e1c766]">
-              <a href="#product">Product</a>
-              <a href="#hospitality">Hospitality</a>
-              <a href="#wings">Wings</a>
-              <a href="#partners">Partners</a>
-              <a href="#pricing">Pricing</a>
-              <a href="#contact">Contact</a>
+              {footerLinks.map((link) => (
+                <a key={link.href} href={link.href}>{link.label}</a>
+              ))}
             </div>
           </div>
         </div>

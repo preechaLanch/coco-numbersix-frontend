@@ -2,16 +2,29 @@
 
 import { useEffect, useState } from "react";
 
-const navLinks = [
-  { label: "Product", href: "#product" },
-  { label: "Hospitality", href: "#hospitality" },
-  { label: "Wings", href: "#wings" },
-  { label: "Partners", href: "#partners" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Contact", href: "#contact" },
-];
+type Locale = "en" | "th";
 
-export default function ActiveNav() {
+const navLinksByLocale = {
+  en: [
+    { label: "Product", href: "#product" },
+    { label: "Hospitality", href: "#hospitality" },
+    { label: "Wings", href: "#wings" },
+    { label: "Partners", href: "#partners" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "Contact", href: "#contact" },
+  ],
+  th: [
+    { label: "สินค้า", href: "#product" },
+    { label: "งานบริการ", href: "#hospitality" },
+    { label: "สู่สากล", href: "#wings" },
+    { label: "พาร์ทเนอร์", href: "#partners" },
+    { label: "ราคา", href: "#pricing" },
+    { label: "ติดต่อ", href: "#contact" },
+  ],
+};
+
+export default function ActiveNav({ locale }: { locale: Locale }) {
+  const navLinks = navLinksByLocale[locale];
   const [activeHref, setActiveHref] = useState(navLinks[0].href);
 
   useEffect(() => {
@@ -42,10 +55,10 @@ export default function ActiveNav() {
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
-  }, []);
+  }, [navLinks]);
 
   return (
-    <nav aria-label="Main navigation" className="hidden items-center gap-5 text-sm font-semibold xl:flex">
+    <nav aria-label={locale === "th" ? "เมนูหลัก" : "Main navigation"} className="hidden items-center gap-5 text-sm font-semibold xl:flex">
       {navLinks.map((link) => (
         <a
           key={link.href}

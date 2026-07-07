@@ -18,6 +18,28 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
+main:lang(th) {
+  font-family: var(--font-thai-sans), var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+main:lang(th) .font-serif {
+  font-family: var(--font-thai-display), var(--font-thai-sans), Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+main:lang(th) h1.font-serif {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+main:lang(th) .nav-link,
+main:lang(th) button,
+main:lang(th) a {
+  letter-spacing: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -92,6 +114,25 @@ html {
   width: fit-content;
   transform: translateY(0.35rem) rotate(-6deg);
   transform-origin: left center;
+}
+
+main:lang(th) .signature-line {
+  font-family: var(--font-thai-signature), var(--font-thai-display), sans-serif;
+  font-size: 3.35rem;
+  font-weight: 400;
+  line-height: 1.18;
+  transform: translateY(0.2rem) rotate(-4deg);
+}
+
+@media (max-width: 767px) {
+  main:lang(th) h1.font-serif {
+    font-size: 3rem;
+    line-height: 1.12;
+  }
+
+  main:lang(th) .signature-line {
+    font-size: 2.35rem;
+  }
 }
 
 .mobile-hero-fade {

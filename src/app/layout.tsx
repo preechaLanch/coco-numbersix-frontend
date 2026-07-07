@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Allura, Geist, Geist_Mono } from "next/font/google";
+import { Allura, Anuphan, Geist, Geist_Mono, IBM_Plex_Sans_Thai_Looped, Srisakdi } from "next/font/google";
 import { siteConfig } from "./siteConfig";
 import "./globals.css";
 
@@ -17,6 +17,24 @@ const allura = Allura({
   variable: "--font-signature",
   subsets: ["latin"],
   weight: "400",
+});
+
+const anuphan = Anuphan({
+  variable: "--font-thai-sans",
+  subsets: ["thai", "latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const ibmPlexThaiLooped = IBM_Plex_Sans_Thai_Looped({
+  variable: "--font-thai-display",
+  subsets: ["thai", "latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const srisakdi = Srisakdi({
+  variable: "--font-thai-signature",
+  subsets: ["thai", "latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -81,7 +99,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${allura.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${allura.variable} ${anuphan.variable} ${ibmPlexThaiLooped.variable} ${srisakdi.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
