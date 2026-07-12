@@ -1,4 +1,4 @@
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://coconumbersix.com").replace(/\/$/, "");
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://coco.numbersixofficial.com").replace(/\/$/, "");
 
 export const siteConfig = {
   name: "Coco Number SiX",
