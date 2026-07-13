@@ -9,6 +9,56 @@ import { siteConfig } from "./siteConfig";
 
 type Locale = "en" | "th";
 
+const partnerProofGroups = [
+  {
+    label: "Aviation & Airline Catering",
+    gridClassName: "sm:grid-cols-2",
+    logos: [
+      {
+        name: "Thai Airways",
+        src: "/images/partners/thai-airways.jpg",
+        className: "max-w-[240px]",
+      },
+      {
+        name: "Thai Catering",
+        src: "/images/partners/thai-catering.png",
+        className: "max-w-[190px]",
+      },
+    ],
+  },
+  {
+    label: "Hotels & Resorts",
+    gridClassName: "sm:grid-cols-2 lg:grid-cols-5",
+    logos: [
+      {
+        name: "Aman",
+        src: "/images/partners/aman.png",
+        className: "max-w-[160px]",
+      },
+      {
+        name: "Four Seasons",
+        src: "/images/partners/four-seasons.png",
+        className: "max-w-[155px]",
+      },
+      {
+        name: "Marriott Resort Pattaya",
+        src: "/images/partners/marriott-resort-pattaya.jpg",
+        className: "max-w-[150px]",
+      },
+      {
+        name: "Veranda Resort Pattaya Na Jomtien",
+        src: "/images/partners/veranda-resort.jpg",
+        className: "max-w-[150px]",
+      },
+      {
+        name: "Movenpick",
+        src: "/images/partners/movenpick.jpg",
+        className: "max-w-[220px]",
+      },
+    ],
+  },
+];
+
 const galleryByLocale = {
   en: [
     {
@@ -407,9 +457,9 @@ const pageCopy = {
     aviationCopy:
       "Chosen for its purity, consistency, and exceptional quality to elevate the experience of discerning guests, both on the ground and in the skies.",
     partnerProof: "Partner proof",
-    partnerProofTitle: "Trusted across aviation, hospitality, wellness, retail, and corporate channels.",
+    partnerProofTitle: "Trusted by aviation and hospitality partners.",
     partnerProofCopy:
-      "A quick view of premium organizations and service partners aligned with the Coco Number SiX hospitality story.",
+      "A focused view of service-led partners aligned with the Coco Number SiX hospitality story.",
     hospitalityEyebrow: "Crafted for service",
     hospitalityTitle: "Service moments that feel refined, useful, and unmistakably Thai.",
     serviceStandard: "Service standard",
@@ -508,8 +558,8 @@ const pageCopy = {
     aviationCopy:
       "คัดเลือกจากความบริสุทธิ์ ความสม่ำเสมอ และคุณภาพ เพื่อยกระดับประสบการณ์ของลูกค้า ทั้งบนพื้นดินและบนท้องฟ้า",
     partnerProof: "ความไว้วางใจจากพาร์ทเนอร์",
-    partnerProofTitle: "ได้รับความไว้วางใจในกลุ่มการบิน โรงแรม เวลเนส รีเทล และองค์กร",
-    partnerProofCopy: "ภาพรวมขององค์กรและพาร์ทเนอร์งานบริการระดับพรีเมียมที่สอดคล้องกับเรื่องราวของ Coco Number SiX",
+    partnerProofTitle: "ได้รับความไว้วางใจจากพาร์ทเนอร์ด้านการบินและโรงแรม",
+    partnerProofCopy: "ภาพรวมพาร์ทเนอร์งานบริการระดับพรีเมียมที่สอดคล้องกับเรื่องราวของ Coco Number SiX",
     hospitalityEyebrow: "ออกแบบเพื่อการบริการ",
     hospitalityTitle: "ช่วงเวลาบริการที่ดูพรีเมียม ใช้งานได้จริง และมีเอกลักษณ์แบบไทย",
     serviceStandard: "มาตรฐานการเสิร์ฟ",
@@ -1234,16 +1284,28 @@ export default function LandingPage({ locale }: { locale: Locale }) {
             </p>
           </div>
 
-          <div className="-mx-5 overflow-x-auto px-5 pb-3 md:mx-0 md:overflow-visible md:px-0 md:pb-0">
-            <div className="relative min-h-[600px] min-w-[900px] overflow-hidden border border-[#d9d3c4] bg-white shadow-[0_18px_50px_rgba(36,46,35,0.08)] md:min-h-0 md:min-w-0 md:aspect-[3/2]">
-              <Image
-                src="/images/trusted-premium-partners-updated.jpg"
-                alt="Trusted by premium partners across aviation, hotels, restaurants, wellness, retail, and corporate channels"
-                fill
-                sizes="(min-width: 768px) 1500px, 900px"
-                className="object-cover object-center"
-              />
-            </div>
+          <div className="overflow-hidden border border-[#ded4bf] bg-white shadow-[0_20px_52px_rgba(36,46,35,0.09)]">
+            {partnerProofGroups.map((group) => (
+              <div key={group.label} className="grid border-t border-[#e4dac7] first:border-t-0 lg:grid-cols-[220px_1fr]">
+                <div className="flex items-center justify-center bg-[#073716] px-5 py-4 text-center text-xs font-bold uppercase tracking-[0.22em] text-[#f8f0d2] lg:justify-start lg:text-left">
+                  <span>{group.label}</span>
+                </div>
+                <div className={`grid gap-px bg-[#eee6d7] ${group.gridClassName}`}>
+                  {group.logos.map((partner) => (
+                    <div key={partner.name} className="flex min-h-32 items-center justify-center bg-white px-6 py-7 transition-colors duration-300 hover:bg-[#fffdf7]">
+                      <Image
+                        src={partner.src}
+                        alt={`${partner.name} logo`}
+                        width={520}
+                        height={260}
+                        sizes="(min-width: 1024px) 18vw, (min-width: 640px) 50vw, 100vw"
+                        className={`h-auto w-full object-contain ${partner.className}`}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
