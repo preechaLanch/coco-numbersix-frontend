@@ -1092,7 +1092,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                 <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#8a7116]">
                   {copy.certification}
                 </p>
-                <div className="mt-4 grid grid-cols-2 gap-3">
+                <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
                   <div className="flex min-h-24 items-center justify-center border border-[#e5dcc7] bg-white px-4 py-3 shadow-[0_10px_28px_rgba(36,46,35,0.06)]">
                     <Image
                       src="/images/cert-halal-thailand.jpg"
@@ -1108,6 +1108,24 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                       alt="Organic Thailand certification mark"
                       width={360}
                       height={360}
+                      className="max-h-16 w-auto object-contain"
+                    />
+                  </div>
+                  <div className="flex min-h-24 items-center justify-center border border-[#e5dcc7] bg-white px-4 py-3 shadow-[0_10px_28px_rgba(36,46,35,0.06)]">
+                    <Image
+                      src="/images/cert-intertek-ghp-haccp.png"
+                      alt="Intertek GHPs and HACCP certification marks"
+                      width={560}
+                      height={312}
+                      className="max-h-16 w-full object-contain"
+                    />
+                  </div>
+                  <div className="flex min-h-24 items-center justify-center border border-[#e5dcc7] bg-white px-4 py-3 shadow-[0_10px_28px_rgba(36,46,35,0.06)]">
+                    <Image
+                      src="/images/cert-iso.jpg"
+                      alt="International Organization for Standardization ISO certification mark"
+                      width={360}
+                      height={300}
                       className="max-h-16 w-auto object-contain"
                     />
                   </div>
