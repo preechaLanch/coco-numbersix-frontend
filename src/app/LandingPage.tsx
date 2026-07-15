@@ -1801,7 +1801,7 @@ export default function LandingPage({ locale }: { locale: Locale }) {
       </section>
 
       <section id="contact" className="scroll-mt-24 bg-[#f5f0e5] px-5 py-16 md:px-10 md:py-24">
-        <div className="mx-auto grid max-w-7xl overflow-hidden border border-[#d9d3c4] bg-[#fbf8f0] lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl overflow-hidden border border-[#d9d3c4] bg-[#fbf8f0] lg:grid-cols-[0.9fr_1.1fr]">
           <div className="p-8 md:p-12 lg:p-16" data-reveal>
             <p className="text-sm font-bold uppercase text-[#8a7116]">{copy.contactEyebrow}</p>
             <h2 className="mt-3 font-serif text-4xl font-semibold text-[#073716] md:text-5xl">
@@ -1849,79 +1849,46 @@ export default function LandingPage({ locale }: { locale: Locale }) {
               ))}
             </div>
           </div>
-          <div className="relative min-h-[420px] bg-[#ccefd5]" data-reveal style={{ transitionDelay: "120ms" }}>
+          <div className="flex items-center justify-center bg-[#ecf6df] p-4 sm:p-6 md:p-10" data-reveal style={{ transitionDelay: "120ms" }}>
             <Image
-              src="/images/product-gallery-vertical.jpg"
-              alt="Coco Number Six bottle presented in a vertical premium product shot"
-              fill
+              src="/images/pyp-contact-card.png"
+              alt="PYP World Green contact card with phone numbers and QR codes for Coco Number SiX and NumberSiX Official"
+              width={1762}
+              height={2500}
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-center"
+              className="h-auto w-full max-w-[640px] shadow-2xl shadow-[#0b3c1b]/12"
             />
           </div>
         </div>
       </section>
 
-      <footer className="bg-[#073716] px-5 py-12 text-white md:px-10 md:py-16">
+      <footer className="bg-[#073716] px-5 py-10 text-white md:px-10 md:py-12">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.28em] text-[#58c78d]">
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#58c78d]">
                 {copy.footerTagline}
               </p>
-              <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight md:text-5xl">
+              <h2 className="mt-4 max-w-3xl font-serif text-3xl font-semibold leading-tight md:text-4xl">
                 PYP World Green Co., Ltd.
               </h2>
-              <p className="mt-5 max-w-xl leading-7 text-[#c9d9cc]">
+              <p className="mt-4 max-w-2xl text-base leading-7 text-[#c9d9cc]">
                 {copy.footerCopy}
               </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                {supportedLanguages.map((language) => (
-                  <span key={language.code} className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/8 px-4 py-2 text-sm font-bold text-[#e1c766]">
-                    <span className="text-lg" aria-hidden="true">{language.flag}</span>
-                    {language.code}
-                  </span>
-                ))}
-              </div>
             </div>
-
-            <div className="rounded-2xl border border-white/12 bg-white/8 p-6">
-              <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-                <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#58c78d]">{copy.contactLabel}</p>
-                  <h3 className="mt-2 font-serif text-3xl font-semibold">{copy.talkTeam}</h3>
-                </div>
-                <a className="text-sm font-bold text-[#e1c766] transition hover:text-white" href="#contact">
-                  {copy.requestSample}
-                </a>
-              </div>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {contactMethods.map((method) => (
-                  <a
-                    key={method.label}
-                    className="rounded-full border border-white/12 bg-[#073716]/40 px-4 py-3 text-sm font-bold text-[#d6e6d8] transition hover:border-[#e1c766] hover:text-white"
-                    href={method.href}
-                    target={method.href.startsWith("line:") ? "_blank" : undefined}
-                    rel={method.href.startsWith("line:") ? "noreferrer" : undefined}
-                  >
-                    {method.label}: {method.value}
-                  </a>
-                ))}
-                {["+66 81 945 1666", "+66 99 151 4247", "+66 99 639 2229"].map((phone) => (
-                  <a
-                    key={phone}
-                    className="rounded-full border border-white/12 bg-[#073716]/40 px-4 py-3 text-sm font-bold text-[#d6e6d8] transition hover:border-[#e1c766] hover:text-white"
-                    href={`tel:${phone.replaceAll(" ", "")}`}
-                  >
-                    {phone}
-                  </a>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-2 md:max-w-[28rem] md:justify-end">
+              {supportedLanguages.map((language) => (
+                <span key={language.code} className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-bold text-[#e1c766]">
+                  <span aria-hidden="true">{language.flag}</span>
+                  {language.code}
+                </span>
+              ))}
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-start justify-between gap-5 border-t border-white/12 pt-6 text-sm text-[#c9d9cc] md:flex-row md:items-center">
+          <div className="mt-9 flex flex-col items-start justify-between gap-4 border-t border-white/12 pt-5 text-sm text-[#c9d9cc] md:flex-row md:items-center">
             <p>{copy.copyright}</p>
-            <div className="flex flex-wrap gap-4 font-semibold text-[#e1c766]">
+            <div className="flex flex-wrap gap-x-5 gap-y-2 font-semibold text-[#e1c766] md:justify-end">
               {footerLinks.map((link) => (
                 <a key={link.href} href={link.href}>{link.label}</a>
               ))}
