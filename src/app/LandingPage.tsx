@@ -330,19 +330,19 @@ const b2bCardsByLocale = {
 const b2bTiersByLocale = {
   en: [
     {
-      package: "เริ่มต้น",
+      package: "Starter",
       volume: "5-19 cases",
       discount: "Standard",
       service: "Free Bangkok delivery for 10+ cases",
     },
     {
-      package: "ธุรกิจ",
+      package: "Business",
       volume: "20-49 cases",
       discount: "8% off",
       service: "Account Manager",
     },
     {
-      package: "พาร์ทเนอร์พรีเมียม",
+      package: "Premium Partner",
       volume: "50+ cases",
       discount: "15% off",
       service: "Custom Label + Priority Delivery",
@@ -350,19 +350,19 @@ const b2bTiersByLocale = {
   ],
   th: [
     {
-      package: "Starter",
+      package: "เริ่มต้น",
       volume: "5-19 ลัง",
       discount: "ปกติ",
       service: "ส่งฟรี กทม. 10+ ลัง",
     },
     {
-      package: "Business",
+      package: "ธุรกิจ",
       volume: "20-49 ลัง",
       discount: "ลด 8%",
       service: "มี Account Manager ดูแล",
     },
     {
-      package: "Premium Partner",
+      package: "พาร์ทเนอร์พรีเมียม",
       volume: "50+ ลัง",
       discount: "ลด 15%",
       service: "ฉลากพิเศษ + จัดส่งแบบ Priority",
