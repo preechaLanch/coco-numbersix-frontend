@@ -28,7 +28,7 @@ const partnerProofGroups = [
   },
   {
     label: "Hotels & Resorts",
-    gridClassName: "sm:grid-cols-2 lg:grid-cols-5",
+    gridClassName: "sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7",
     logos: [
       {
         name: "Aman",
@@ -49,6 +49,16 @@ const partnerProofGroups = [
         name: "Veranda Resort Pattaya Na Jomtien",
         src: "/images/partners/veranda-resort.jpg",
         className: "max-w-[150px]",
+      },
+      {
+        name: "VIE Hotel MGallery Bangkok",
+        src: "/images/partners/vie-hotel.jpg",
+        className: "max-w-[145px]",
+      },
+      {
+        name: "OZO North Pattaya",
+        src: "/images/partners/ozo-north-pattaya.png",
+        className: "max-w-[165px]",
       },
       {
         name: "Movenpick",
