@@ -237,7 +237,7 @@ const catalogProductsByLocale = {
         "Small single-serve size with less waste",
         "Ideal for mini bars and in-flight service",
         "Breakfast Buffet / Welcome Drink",
-        "Lightweight format supports lower footprint",
+        "Compact format for controlled service portions",
       ],
       bestFor: "Airlines · Mini Bar · Breakfast",
     },
@@ -287,7 +287,7 @@ const catalogProductsByLocale = {
         "ขนาดเล็กดื่มพอดี ลดการเหลือทิ้ง",
         "เหมาะสำหรับมินิบาร์และบริการบนเครื่อง",
         "บุฟเฟต์อาหารเช้า / Welcome Drink",
-        "ขนาดเบา ช่วยลดภาระการขนส่ง",
+        "ขนาดกะทัดรัด ควบคุมปริมาณเสิร์ฟได้ง่าย",
       ],
       bestFor: "สายการบิน · มินิบาร์ · อาหารเช้า",
     },
@@ -387,25 +387,27 @@ const pricingCopy = {
       "Choose the format that fits each service moment: retail, events, hotels, airlines, and export-ready supply.",
     priceLabel: "Price / bottle",
     b2bTitle: "B2B packages for business",
-    b2bIntro: "Special pricing for corporate customers · case orders · delivery support · account manager service",
+    b2bIntro: "Special pricing for corporate customers · sample requests · case orders · delivery support",
     volumeLabel: "Volume / month",
     discountLabel: "Discount",
     serviceLabel: "Special service",
-    customTitle: "Flexible purchase terms for your business",
+    customTitle: "Request a corporate quotation",
     customCopy:
-      "Our team can help calculate pricing by case quantity, channel, destination, custom labels, and delivery cycle.",
+      "Tell us your volume, channel, destination, and service format. Our team will respond with sample options and a tailored quotation.",
+    customCta: "Contact sales",
   },
   th: {
     productsTitle: "สินค้าของเรา",
     productsIntro: "เลือกขนาดให้เหมาะกับช่วงเวลา: retail, event, hotel, airline และ export-ready supply",
     priceLabel: "ราคา / ขวด",
     b2bTitle: "แพ็กเกจ B2B สำหรับธุรกิจ",
-    b2bIntro: "ราคาพิเศษสำหรับลูกค้าองค์กร · สั่งลัง · ส่งถึงที่ · มี Account Manager ดูแล",
+    b2bIntro: "ราคาพิเศษสำหรับลูกค้าองค์กร · ขอสินค้าตัวอย่าง · สั่งเป็นลัง · รองรับการจัดส่ง",
     volumeLabel: "ปริมาณ / เดือน",
     discountLabel: "ส่วนลด",
     serviceLabel: "บริการพิเศษ",
-    customTitle: "เงื่อนไขการสั่งซื้อยืดหยุ่นตามธุรกิจของคุณ",
-    customCopy: "ทีมงานสามารถช่วยคำนวณราคาตามจำนวนลัง ช่องทางจำหน่าย ปลายทาง ฉลากพิเศษ และรอบการจัดส่ง",
+    customTitle: "ขอใบเสนอราคาสำหรับองค์กร",
+    customCopy: "แจ้งจำนวน ช่องทาง ปลายทาง และรูปแบบงานบริการ ทีมงานจะช่วยเสนอสินค้าตัวอย่างและราคาที่เหมาะกับธุรกิจของคุณ",
+    customCta: "ติดต่อฝ่ายขาย",
   },
 };
 
@@ -428,15 +430,15 @@ const wingsLocalCopy = {
 
 const pageCopy = {
   en: {
-    navCta: "Enquire now",
+    navCta: "Get B2B quote",
     brandSubtitle: "100% Organic Aromatic Coconut Water",
     heroEyebrow: "Our story",
     heroTitle: "That First Coconut Sip.",
     heroKicker: "The beginning of Coco Number SiX",
     heroCopy:
       "Every memorable hospitality experience begins with a simple moment. For us, it was the first sip of a perfectly fresh Thai aromatic coconut.",
-    requestCatalogue: "Request Catalogue",
-    contactUs: "Contact Us",
+    requestCatalogue: "Request B2B Quote",
+    contactUs: "Request Product Sample",
     distributor: "Become a Distributor",
     signature: "Pure hydration, naturally.",
     introTitle: ["Naturally sweet.", "Refreshingly pure.", "Unmistakably Thai."],
@@ -529,15 +531,15 @@ const pageCopy = {
     copyright: "© PYP World Green Co., Ltd. Organic in Every Drop.",
   },
   th: {
-    navCta: "สอบถามสินค้า",
+    navCta: "ขอราคาองค์กร",
     brandSubtitle: "น้ำมะพร้าวน้ำหอมออร์แกนิก 100%",
     heroEyebrow: "เรื่องราวของเรา",
     heroTitle: "จิบแรกของมะพร้าวน้ำหอม",
     heroKicker: "จุดเริ่มต้นของ Coco Number SiX",
     heroCopy:
       "ประสบการณ์บริการที่น่าจดจำมักเริ่มจากช่วงเวลาง่าย ๆ สำหรับเรา คือจิบแรกของมะพร้าวน้ำหอมไทยที่สดและสมบูรณ์แบบ",
-    requestCatalogue: "ขอแคตตาล็อก",
-    contactUs: "ติดต่อเรา",
+    requestCatalogue: "ขอราคาองค์กร",
+    contactUs: "ขอสินค้าตัวอย่าง",
     distributor: "สมัครเป็นตัวแทนจำหน่าย",
     signature: "เติมความสดชื่นอย่างเป็นธรรมชาติ",
     introTitle: ["หวานธรรมชาติ", "สดชื่นบริสุทธิ์", "เอกลักษณ์แบบไทย"],
@@ -1768,6 +1770,12 @@ export default function LandingPage({ locale }: { locale: Locale }) {
                   <p className="mt-4 leading-7 text-[#d6e6d8]">
                     {pricing.customCopy}
                   </p>
+                  <a
+                    className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-[#e1c766] px-6 text-sm font-black uppercase tracking-[0.12em] text-[#073716] transition hover:bg-[#f0da7a]"
+                    href="#contact"
+                  >
+                    {pricing.customCta}
+                  </a>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {copy.quoteItems.map((item) => (
