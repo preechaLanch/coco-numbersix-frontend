@@ -738,6 +738,20 @@ function getJsonLd(locale: Locale) {
         inLanguage: locale,
       },
       {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: locale === "th" ? siteConfig.locales.th.title : siteConfig.locales.en.title,
+        description: locale === "th" ? siteConfig.locales.th.description : siteConfig.locales.en.description,
+        isPartOf: {
+          "@id": `${siteConfig.url}/#website`,
+        },
+        about: {
+          "@id": `${pageUrl}/#product`,
+        },
+        inLanguage: locale,
+      },
+      {
         "@type": "Product",
         "@id": `${pageUrl}/#product`,
         name: "Coco Number SiX Premium Thai Organic Aromatic Coconut Water",
